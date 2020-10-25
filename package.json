@@ -1,0 +1,57 @@
+{
+  "name": "forkfolio",
+  "version": "0.0.1",
+  "description": "a portfolio website for everyone to showcase their work",
+  "main": "build.js",
+  "bin": {
+    "forkfolio": "bin/forkfolio.js"
+  },
+  "scripts": {
+    "cli": "OUT_DIR='./dist' node bin/forkfolio.js",
+    "clean": "rm -rf ./dist/*",
+    "prettier": "prettier --write \"./**/*.{js,jsx,json,html,css,md}\"",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect",
+    "test": "snyk test"
+  },
+  "author": "Kaustubh Ladiya <k4ustu3h@gmail.com> (https://k4ustu3h.cf)",
+  "bugs": {
+    "url": "https://github.com/k4ustu3h/forkfolio/issues"
+  },
+  "homepage": "https://github.com/k4ustu3h/forkfolio",
+  "keywords": [
+    "personal-website",
+    "github",
+    "portfolio",
+    "portfolio website",
+    "gitfolio",
+    "git"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k4ustu3h/forkfolio.git"
+  },
+  "license": "GPL-3.0",
+  "dependencies": {
+    "bluebird": "3.7.2",
+    "body-parser": "^1.19.0",
+    "commander": "6.1.0",
+    "ejs": "3.1.5",
+    "express": "4.17.1",
+    "github-emoji": "^1.1.1",
+    "got": "11.7.0",
+    "handlebars": "4.7.6",
+    "jsdom": "16.4.0",
+    "ncp": "^2.0.0",
+    "snyk": "1.406.0"
+  },
+  "devDependencies": {
+    "eslint": "7.10.0",
+    "prettier": "2.1.2",
+    "stylelint": "13.7.2",
+    "stylelint-config-prettier": "8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-prettier": "^1.1.2"
+  },
+  "snyk": true
+}

@@ -1,0 +1,14 @@
+:root {
+  --background-background: #fff;
+  --background-image: linear-gradient(
+      90deg,
+      rgba(10, 10, 10, 0.4),
+      rgb(10, 10, 10, 0.4)
+    ),
+    url("{{{background}}}");
+  --gradient: linear-gradient(90deg, #009bef, #c471ed, #b31818);
+  --mdc-theme-background: #fff;
+  --mdc-theme-on-primary: #000;
+  --mdc-theme-primary: #000;
+  --mdc-theme-surface: #fff;
+}

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no"
+    />
+    <title>forkfolio UI</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asap&family=Asap+Condensed&family=Manrope:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css" />
+  </head>
+  <body>
+    <form method="post" action="build">
+      <input
+        type="text"
+        class="input"
+        placeholder="username"
+        id="username"
+        name="username"
+        required
+      />
+      <br />
+      <input
+        type="text"
+        class="input"
+        placeholder="background"
+        name="background"
+        id="background"
+      />
+      <div style="display: none;" id="show_options">
+        <h3>Sort By :</h3>
+        <div class="options">
+          <input type="radio" id="star" name="sort" value="star" />
+          <label for="star">Star</label>
+        </div>
+        <div class="options">
+          <input
+            type="radio"
+            id="created"
+            name="sort"
+            value="created"
+            checked
+          />
+          <label for="created">Created</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="updated" name="sort" value="updated" />
+          <label for="updated">Updated</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="pushed" name="sort" value="pushed" />
+          <label for="pushed">Pushed</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="full_name" name="sort" value="full_name" />
+          <label for="full_name">Full Name</label>
+        </div>
+        <h3>Order By :</h3>
+        <div class="options">
+          <input type="radio" id="asc" name="order" value="asc" checked />
+          <label for="asc">Ascending</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="desc" name="order" value="desc" />
+          <label for="desc">Descending</label>
+        </div>
+        <br />
+        <br />
+        <div class="options">
+          <label class="pure-material-checkbox">
+            <input type="checkbox" id="theme" name="theme" checked />
+            <span>Use Dark Theme</span>
+          </label>
+        </div>
+        <div class="options">
+          <label class="pure-material-checkbox">
+            <input type="checkbox" id="fork" name="fork" value="true" checked />
+            <span>Include Forks</span>
+          </label>
+        </div>
+        <div class="options">
+          <label class="pure-material-checkbox">
+            <input type="checkbox" id="socials" name="socials" />
+            <span>Include Socials</span>
+          </label>
+        </div>
+        <div style="display: none;" id="input_for_socials">
+          <span class="iconify" data-icon="simple-icons:codepen"></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="codepen username"
+            id="codepen"
+            name="codepen"
+          />
+          <br />
+          <span class="iconify" data-icon="fa-brands:dev"></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="dev username"
+            id="dev"
+            name="dev"
+          />
+          <br />
+          <span class="iconify" data-icon="simple-icons:dribbble"></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="dribbble username"
+            id="dribbble"
+            name="dribbble"
+          />
+          <br />
+          <span class="iconify" data-icon="mdi:email-outline"></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="email address"
+            id="email"
+            name="email"
+          />
+          <br />
+          <span class="iconify" data-icon="simple-icons:facebook"></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="facebook username"
+            id="facebook"
+            name="facebook"
+          />
+          <br />
+          <span class="iconify" data-icon="mdi:alphabet-latin"></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="initials"
+            id="initials"
+            name="initials"
+          />
+          <br />
+          <span class="iconify" data-icon="mdi:gradient"></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="gradient"
+            id="gradient"
+            name="gradient"
+          />
+          <br/>
+          <span class="iconify" data-icon="simple-icons:gravatar"></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="gravatar username"
+            id="gravatar"
+            name="gravatar"
+          />
+          <br />
+          <span class="iconify" data-icon="simple-icons:instagram"></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="instagram username"
+            id="instagram"
+            name="instagram"
+          />
+          <br />
+          <span class="iconify" data-icon="simple-icons:keybase"></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="keybase username"
+            id="keybase"
+            name="keybase"
+          />
+          <br />
+          <span
+            class="iconify"
+            data-icon="ant-design:medium-circle-filled"
+            data-width="28"
+            data-height="28"
+          ></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="medium username"
+            id="medium"
+            name="medium"
+          />
+          <br />
+          <span class="iconify" data-icon="simple-icons:pinterest"></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="pinterest username"
+            id="pinterest"
+            name="pinterest"
+          />
+          <br />
+          <span class="iconify" data-icon="mdi:shield-key-outline"></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="pinterest domain verification key"
+            id="pinterest_key"
+            name="pinterest_key"
+          />
+          <br />
+          <span class="iconify" data-icon="simple-icons:reddit"></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="reddit username"
+            id="reddit"
+            name="reddit"
+          />
+          <br />
+          <span class="iconify" data-icon="fa-brands:snapchat"></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="snapchat username"
+            id="snapchat"
+            name="snapchat"
+          />
+          <br />
+          <span class="iconify" data-icon="fa-brands:stack-exchange"></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="stackexchange username"
+            id="stackexchange"
+            name="stackexchange"
+          />
+          <br />
+          <span class="iconify" data-icon="simple-icons:steam"></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="steam username"
+            id="steam"
+            name="steam"
+          />
+          <br />
+          <span class="iconify" data-icon="fa-brands:telegram"></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="telegram username"
+            id="telegram"
+            name="telegram"
+          />
+          <br />
+          <span
+            class="iconify"
+            data-icon="ant-design:twitter-circle-filled"
+            data-width="28"
+            data-height="28"
+          ></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="twitter username"
+            id="twitter"
+            name="twitter"
+          />
+          <br />
+          <span class="iconify" data-icon="simple-icons:xdadevelopers"></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="xda user id"
+            id="xda"
+            name="xda"
+          />
+          <br />
+          <span
+            class="iconify"
+            data-icon="entypo-social:youtube-with-circle"
+          ></span>
+          <input
+            type="text"
+            class="input socials"
+            placeholder="youtube channel id"
+            id="youtube"
+            name="youtube"
+          />
+        </div>
+      </div>
+      <br />
+      <br />
+      <button type="submit" class="button" id="build">Build</button>
+    </form>
+  </body>
+  <footer>
+    <a href="./update">
+      <span class="iconify" data-icon="ic:round-update"></span>
+      Update
+    </a>
+    <div class="options_switch">
+      <label class="pure-material-checkbox">
+        <input type="checkbox" id="options_switch" name="options_switch" />
+        <span>Show Options</span>
+      </label>
+    </div>
+  </footer>
+  <script type="text/javascript" src="assets/js/index.js"></script>
+</html>
