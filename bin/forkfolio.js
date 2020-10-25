@@ -36,22 +36,19 @@ program
     "-g, --gradient [direction,color1,color2...]",
     "specify your preferred gradient"
   )
-  .option("-G, --gravatar [username]", "specify gravatar/wordpress username")
   .option("-i, --initials [initials]", "specify your initials")
   .option("-I, --instagram [username]", "specify instagram username")
   .option("-k, --keybase [username]", "specify keybase username")
   .option("-m, --medium [username]", "specify medium username")
   .option("-p, --pinterest [username]", "specify pinterest username")
-  .option(
-    "-P, --pinterest_key [content]",
-    "specify pinterest domain verification key"
-  )
   .option("-r, --reddit [username]", "specify reddit username")
   .option("-S, --snapchat [username]", "specify snapchat username")
   .option("-E, --stackexchange [user id]", "specify stackexchange user id")
   .option("-a, --steam [username]", "specify steam username")
   .option("-T, --telegram [username]", "specify telegram username")
-  .option("-w, --twitter [username]", "specify twitter username")
+  .option("-u, --tumblr [username]", "specify tumblr username")
+  .option("-w, --twitch [username]", "specify twitch username")
+  .option("-W, --twitter [username]", "specify twitter username")
   .option("-x, --xda [user id]", "specify xda user id")
   .option("-y, --youtube [channel id]", "specify youtube channel id")
   .action(buildCommand);

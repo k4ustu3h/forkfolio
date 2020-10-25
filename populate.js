@@ -39,18 +39,18 @@ module.exports.updateHTML = (username, opts) => {
     email,
     facebook,
     gradient,
-    gravatar,
     initials,
     instagram,
     keybase,
     medium,
     pinterest,
-    pinterest_key,
     reddit,
     snapchat,
     stackexchange,
     steam,
     telegram,
+    tumblr,
+    twitch,
     twitter,
     xda,
     youtube,
@@ -142,7 +142,6 @@ module.exports.updateHTML = (username, opts) => {
 
           document.getElementsByTagName("head")[0].appendChild(icon);
           document.getElementsByTagName("head")[0].innerHTML += `
-          <meta name="p:domain_verify" content="${pinterest_key}" />
           <meta name="description" content="${user.bio}" />
           <meta property="og:image" content="${user.avatar_url}" />
           <meta property="og:type" content="profile" />
@@ -221,9 +220,6 @@ module.exports.updateHTML = (username, opts) => {
                   facebook == null ? "none !important" : "block"
                 };"><a href="https://fb.me/${facebook}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:facebook"></span></a></span>
                 <span style="display:${
-                  gravatar == null ? "none !important" : "block"
-                };"><a href="https://gravatar.com/${gravatar}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:gravatar"></span></a></span>
-                <span style="display:${
                   instagram == null ? "none !important" : "block"
                 };"><a href="https://www.instagram.com/${instagram}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:instagram"></span></a></span>
                 <span style="display:${
@@ -250,6 +246,12 @@ module.exports.updateHTML = (username, opts) => {
                 <span style="display:${
                   telegram == null ? "none !important" : "block"
                 };"><a href="https://t.me/${telegram}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="fa-brands:telegram"></span></a></span>
+                <span style="display:${
+                  tumblr == null ? "none !important" : "block"
+                };"><a href="https://${tumblr}.tumblr.com/" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:tumblr"></span></a></span>
+                <span style="display:${
+                  twitter == null ? "none !important" : "block"
+                };"><a href="https://www.twitch.tv/${twitch}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:twitch"></span></a></span>
                 <span style="display:${
                   twitter == null ? "none !important" : "block"
                 };"><a href="https://www.twitter.com/${twitter}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="ant-design:twitter-circle-filled" data-width="24" data-height="24"></span></a></span>

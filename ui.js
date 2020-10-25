@@ -57,15 +57,11 @@ function uiCommand() {
     const email = req.body.email ? req.body.email : null;
     const facebook = req.body.facebook ? req.body.facebook : null;
     const gradient = req.body.gradient ? req.body.gradient : null;
-    const gravatar = req.body.gravatar ? req.body.gravatar : null;
     const initials = req.body.initials ? req.body.initials : null;
     const instagram = req.body.instagram ? req.body.instagram : null;
     const keybase = req.body.keybase ? req.body.keybase : null;
     const medium = req.body.medium ? req.body.medium : null;
     const pinterest = req.body.pinterest ? req.body.pinterest : null;
-    const pinterest_key = req.body.pinterest_key
-      ? req.body.pinterest_key
-      : null;
     const reddit = req.body.reddit ? req.body.reddit : null;
     const snapchat = req.body.snapchat ? req.body.snapchat : null;
     const stackexchange = req.body.stackexchange
@@ -73,10 +69,12 @@ function uiCommand() {
       : null;
     const steam = req.body.steam ? req.body.steam : null;
     const telegram = req.body.telegram ? req.body.telegram : null;
+    const tumblr = req.body.tumblr ? req.body.tumblr : null;
+    const twitch = req.body.twitch ? req.body.twitch : null;
     const twitter = req.body.twitter ? req.body.twitter : null;
     const xda = req.body.xda ? req.body.xda : null;
     const youtube = req.body.youtube ? req.body.youtube : null;
-    const background = req.body.background
+    let background = req.body.background
       ? req.body.background
       : "https://source.unsplash.com/1280x720/?wallpaper";
     const theme = req.body.theme === "on" ? "dark" : "light";
@@ -91,18 +89,18 @@ function uiCommand() {
       email,
       facebook,
       gradient,
-      gravatar,
       initials,
       instagram,
       keybase,
       medium,
       pinterest,
-      pinterest_key,
       reddit,
       snapchat,
       stackexchange,
       steam,
       telegram,
+      tumblr,
+      twitch,
       twitter,
       xda,
       youtube,

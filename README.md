@@ -1,9 +1,6 @@
-[![Build Status](https://img.shields.io/travis/com/k4ustu3h/forkfolio?logo=travis&style=for-the-badge)](https://travis-ci.com/k4ustu3h/forkfolio)
+[![Build Status](https://travis-ci.com/k4ustu3h/forkfolio.svg?token=LxfsjT8dyxShiSEbgKYQ&branch=main)](https://travis-ci.com/k4ustu3h/forkfolio)
 [![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?logo=prettier&style=for-the-badge)](https://github.com/prettier/prettier)
-[![Dependency Status](https://img.shields.io/david/k4ustu3h/forkfolio?style=for-the-badge)](https://david-dm.org/k4ustu3h/forkfolio)
-[![devDependencies Status](https://img.shields.io/david/dev/k4ustu3h/forkfolio?style=for-the-badge)](https://david-dm.org/k4ustu3h/forkfolio?type=dev)
-[![GitHub release](https://img.shields.io/github/release/k4ustu3h/forkfolio.svg?style=for-the-badge)](https://github.com/k4ustu3h/forkfolio/releases/latest)
-[![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/k4ustu3h/forkfolio?logo=snyk&style=for-the-badge)](https://snyk.io/test/github/k4ustu3h/forkfolio?targetFile=package.json)
+[![GitHub release](https://img.shields.io/github/release/imfunniee/gitfolio.svg?style=for-the-badge)](https://github.com/imfunniee/gitfolio/releases/latest)
 
 # forkfolio
 
@@ -135,18 +132,18 @@ forkfolio supports adding the following Social links
 -   Dribbble `-D, --dribbble <username>`
 -   Email `-e, --email <email>`
 -   Facebook `-F, --facebook <username>`
--   Gravatar `-g, --gravatar <username>`
 -   Instagram `-I, --instagram <username>`
 -   Keybase `-k, --keybase <username>`
 -   Medium `-m, --medium <username>`
 -   Pinterest `-p, --pinterest <username>`
--   Pinterest Domain verification key (meta name="p:domain*verify" content="\_specify the key inside this*") `-P, --pinterest_key <key>`
 -   Reddit `-r, --reddit <username>`
 -   Snapchat `-S, --snapchat <username>`
 -   Stack Exchange `-E, --stackexchange <user id>`
 -   Steam `-st, --steam <username>`
 -   Telegram `-T, --telegram <username>`
--   Twitter `-w, --twitter <username>`
+-   Tumblr `-u, --tumblr <username>`
+-   Twitch `-w, --twitch <username>`
+-   Twitter `-W, --twitter <username>`
 -   XDA Developers `-x, --xda <user id>`
 -   YouTube `-y, --youtube <channel id>`
 
@@ -177,12 +174,6 @@ or use the `Update` options in forkfolio's UI
 This will update your info and your repository info.
 
 To Update background or theme you need to run `build` command again.
-
----
-
-### License
-
-[![License](https://img.shields.io/github/license/k4ustu3h/forkfolio.svg?style=for-the-badge)](https://github.com/k4ustu3h/forkfolio/blob/master/LICENSE)
 
 ---
 

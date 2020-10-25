@@ -12,7 +12,7 @@ before_install:
 before_script:
   - npm install -g
 script:
-  - forkfolio build k4ustu3h -f -t dark -s updated -c k4ustu3h -d k4ustu3h -D k4ustu3h -e k4ustu3h@gmail.com -F k4ustu3h -G kaustubhladiya -i K_ -I k4ustu3h -k k4ustu3h -m k4ustu3h -p k4ustu3h -P 074c672fe9c3e43eb1565e6726bd2a79 -r kaustubhladiya -S k4ustu3h -E 16727002 -a k4ustu3h -T k4ustu3h -w k4ustu3h -x 9461231 -y UCD79rV3UKNzMCkwMLgyteEw
+  - forkfolio build k4ustu3h -f -t dark -s updated -c k4ustu3h -d k4ustu3h -D k4ustu3h -e k4ustu3h@gmail.com -F k4ustu3h -i K_ -I k4ustu3h -k k4ustu3h -m k4ustu3h -p k4ustu3h -r kaustubhladiya -S k4ustu3h -E 16727002 -a k4ustu3h -T k4ustu3h -u k4ustu3h -w k4ustu3h -W k4ustu3h -x 9461231 -y UCD79rV3UKNzMCkwMLgyteEw
   - npm run prettier
 after_success:
   - lhci autorun --upload.target=temporary-public-storage
@@ -25,4 +25,4 @@ deploy:
   verbose: true
   fqdn: k4ustu3h.cf
   repo: k4ustu3h/k4ustu3h.cf
-  target-branch: master
+  target-branch: gh_pages
