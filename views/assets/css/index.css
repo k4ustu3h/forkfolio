@@ -31,7 +31,6 @@ form {
   font-size: 4vh;
 }
 
-
 .mdc-text-field--filled .mdc-floating-label--float-above {
   margin-bottom: 1.5vh;
 }
@@ -41,11 +40,11 @@ form {
   margin-bottom: 1.5vh;
 }
 
-.line-ripple::before{
+.line-ripple::before {
   border-bottom-width: 0.3vh;
 }
 
-.line-ripple::after{
+.line-ripple::after {
   border-bottom-width: 0.6vh;
 }
 
@@ -75,7 +74,7 @@ form {
   }
 }
 
-.socials{
+.socials {
   margin: 16px;
 }
 
@@ -85,17 +84,17 @@ form {
   padding-right: 4px;
 }
 
-.options_switch{
+.options_switch {
   padding-top: 4vh;
 }
 
-.fab{
-	bottom:16px;
-	right:16px;
-  position:fixed;
+.fab {
+  bottom: 16px;
+  right: 16px;
+  position: fixed;
 }
 
-.fab_icon{
+.fab_icon {
   height: 28px !important;
   padding-right: 4px;
   width: 28px !important;
