@@ -206,29 +206,6 @@
             <input
               checked
               class="mdc-checkbox__native-control"
-              id="theme"
-              name="theme"
-              type="checkbox"
-            />
-            <div class="mdc-checkbox__background">
-              <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                <path
-                  class="mdc-checkbox__checkmark-path"
-                  fill="none"
-                  d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                />
-              </svg>
-              <div class="mdc-checkbox__mixedmark"></div>
-            </div>
-            <div class="mdc-checkbox__ripple"></div>
-          </div>
-          <label for="theme">Use Dark Theme</label>
-        </div>
-        <div class="mdc-form-field">
-          <div class="mdc-checkbox">
-            <input
-              checked
-              class="mdc-checkbox__native-control"
               id="fork"
               name="fork"
               type="checkbox"
@@ -247,6 +224,103 @@
             <div class="mdc-checkbox__ripple"></div>
           </div>
           <label for="fork">Include Forks</label>
+        </div>
+        <div class="mdc-form-field">
+          <div class="mdc-checkbox">
+            <input
+              class="mdc-checkbox__native-control"
+              id="styles_switch"
+              name="styles_switch"
+              type="checkbox"
+            />
+            <div class="mdc-checkbox__background">
+              <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                <path
+                  class="mdc-checkbox__checkmark-path"
+                  fill="none"
+                  d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                />
+              </svg>
+              <div class="mdc-checkbox__mixedmark"></div>
+            </div>
+            <div class="mdc-checkbox__ripple"></div>
+          </div>
+          <label for="styles_switch">Show Styling Options</label>
+        </div>
+        <div style="display: none" id="styles">
+          <div class="mdc-form-field">
+            <div class="mdc-checkbox">
+              <input
+                checked
+                class="mdc-checkbox__native-control"
+                id="theme"
+                name="theme"
+                type="checkbox"
+              />
+              <div class="mdc-checkbox__background">
+                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                  <path
+                    class="mdc-checkbox__checkmark-path"
+                    fill="none"
+                    d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                  />
+                </svg>
+                <div class="mdc-checkbox__mixedmark"></div>
+              </div>
+              <div class="mdc-checkbox__ripple"></div>
+            </div>
+            <label for="theme">Use Dark Theme</label>
+          </div>
+          <br />
+          <div
+            class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon socials"
+          >
+            <span
+              class="iconify mdc-text-field__icon social_icon"
+              data-icon="mdi:alphabet-latin"
+            >
+              Initials
+            </span>
+            <input
+              class="mdc-text-field__input"
+              id="initials"
+              maxlength="3"
+              name="initials"
+            />
+            <div class="mdc-notched-outline">
+              <div class="mdc-notched-outline__leading"></div>
+              <div class="mdc-notched-outline__notch">
+                <label class="mdc-floating-label" for="initials">
+                  Initials
+                </label>
+              </div>
+              <div class="mdc-notched-outline__trailing"></div>
+            </div>
+          </div>
+          <div
+            class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon socials"
+          >
+            <span
+              class="iconify mdc-text-field__icon social_icon"
+              data-icon="ic:round-gradient"
+            >
+              Gradient
+            </span>
+            <input
+              class="mdc-text-field__input"
+              id="gradient"
+              name="gradient"
+            />
+            <div class="mdc-notched-outline">
+              <div class="mdc-notched-outline__leading"></div>
+              <div class="mdc-notched-outline__notch">
+                <label class="mdc-floating-label" for="gradient">
+                  Gradient
+                </label>
+              </div>
+              <div class="mdc-notched-outline__trailing"></div>
+            </div>
+          </div>
         </div>
         <div class="mdc-form-field">
           <div class="mdc-checkbox">
@@ -373,55 +447,6 @@
               <div class="mdc-notched-outline__notch">
                 <label class="mdc-floating-label" for="facebook">
                   Facebook username
-                </label>
-              </div>
-              <div class="mdc-notched-outline__trailing"></div>
-            </div>
-          </div>
-          <div
-            class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon socials"
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="mdi:alphabet-latin"
-            >
-              Initials
-            </span>
-            <input
-              class="mdc-text-field__input"
-              id="initials"
-              maxlength="3"
-              name="initials"
-            />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="initials">
-                  Initials
-                </label>
-              </div>
-              <div class="mdc-notched-outline__trailing"></div>
-            </div>
-          </div>
-          <div
-            class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon socials"
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="ic:round-gradient"
-            >
-              Gradient
-            </span>
-            <input
-              class="mdc-text-field__input"
-              id="gradient"
-              name="gradient"
-            />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="gradient">
-                  Gradient
                 </label>
               </div>
               <div class="mdc-notched-outline__trailing"></div>
@@ -785,7 +810,7 @@
         snackbar.open();
         document
           .getElementById("build-button")
-          .addEventListener("click", function(event) {
+          .addEventListener("click", function (event) {
             event.preventDefault();
           });
       } else {

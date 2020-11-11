@@ -14,3 +14,10 @@ document
       document.querySelector("#show_options").style.display = "none";
     }
   });
+document.querySelector("#styles_switch").addEventListener("change", (event) => {
+  if (event.target.checked) {
+    document.querySelector("#styles").style.display = "block";
+  } else {
+    document.querySelector("#styles").style.display = "none";
+  }
+});
