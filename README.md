@@ -1,6 +1,10 @@
-[![Build Status](https://travis-ci.com/k4ustu3h/forkfolio.svg?token=LxfsjT8dyxShiSEbgKYQ&branch=main)](https://travis-ci.com/k4ustu3h/forkfolio)
+[![Build Status](https://img.shields.io/travis/com/k4ustu3h/forkfolio?style=for-the-badge)](https://travis-ci.com/github/k4ustu3h/forkfolio)
 [![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?logo=prettier&style=for-the-badge)](https://github.com/prettier/prettier)
+[![Dependencies](https://img.shields.io/david/k4ustu3h/forkfolio?style=for-the-badge)](https://david-dm.org/k4ustu3h/forkfolio)
+[![DevDependencies](https://img.shields.io/david/dev/k4ustu3h/forkfolio?style=for-the-badge)](https://david-dm.org/k4ustu3h/forkfolio?type=dev)
 [![GitHub release](https://img.shields.io/github/release/imfunniee/gitfolio.svg?style=for-the-badge)](https://github.com/imfunniee/gitfolio/releases/latest)
+
+# A WORK IN PROGRESS GITFOLIO FORK
 
 # forkfolio
 
@@ -135,12 +139,14 @@ forkfolio supports adding the following Social links
 -   Instagram `-I, --instagram <username>`
 -   Keybase `-k, --keybase <username>`
 -   Medium `-m, --medium <username>`
--   Pinterest `-p, --pinterest <username>`
+-   PayPal `-p, --paypal <username>`
+-   Pinterest `-P, --pinterest <username>`
 -   Reddit `-r, --reddit <username>`
 -   Snapchat `-S, --snapchat <username>`
 -   Stack Exchange `-E, --stackexchange <user id>`
 -   Steam `-st, --steam <username>`
 -   Telegram `-T, --telegram <username>`
+-   TV Time `-v, --tvtime <user id>`
 -   Tumblr `-u, --tumblr <username>`
 -   Twitch `-w, --twitch <username>`
 -   Twitter `-W, --twitter <username>`

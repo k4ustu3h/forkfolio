@@ -10,10 +10,7 @@
     "clean": "rm -rf ./dist/*",
     "cli": "OUT_DIR='./dist' node bin/forkfolio.js",
     "postinstall": "patch-package",
-    "prepare": "npm run snyk-protect",
-    "prettier": "prettier --write \"./**/*.{js,jsx,json,html,css,md}\"",
-    "snyk-protect": "snyk protect",
-    "test": "snyk test"
+    "prettier": "prettier --write \"./**/*.{js,jsx,json,html,css,md}\""
   },
   "author": "Kaustubh Ladiya <k4ustu3h@gmail.com> (https://k4ustu3h.cf)",
   "bugs": {
@@ -36,24 +33,22 @@
   "dependencies": {
     "bluebird": "3.7.2",
     "body-parser": "^1.19.0",
-    "commander": "6.2.0",
-    "ejs": "3.1.5",
+    "commander": "7.2.0",
+    "ejs": "3.1.6",
     "express": "4.17.1",
     "github-emoji": "^1.1.1",
-    "got": "11.8.0",
-    "handlebars": "4.7.6",
-    "jsdom": "16.4.0",
-    "ncp": "^2.0.0",
-    "snyk": "1.425.3"
+    "got": "11.8.2",
+    "handlebars": "4.7.7",
+    "jsdom": "16.5.3",
+    "ncp": "^2.0.0"
   },
   "devDependencies": {
-    "eslint": "7.13.0",
+    "eslint": "7.26.0",
     "patch-package": "^6.2.2",
-    "prettier": "2.1.2",
+    "prettier": "2.3.0",
     "prettier-stylelint": "0.4.2",
-    "stylelint": "13.7.2",
+    "stylelint": "13.13.1",
     "stylelint-config-prettier": "8.0.2",
-    "stylelint-config-standard": "^20.0.0"
-  },
-  "snyk": true
+    "stylelint-config-standard": "22.0.0"
+  }
 }

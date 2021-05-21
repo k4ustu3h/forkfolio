@@ -43,12 +43,14 @@ module.exports.updateHTML = (username, opts) => {
     instagram,
     keybase,
     medium,
+    paypal,
     pinterest,
     reddit,
     snapchat,
     stackexchange,
     steam,
     telegram,
+    tvtime,
     tumblr,
     twitch,
     twitter,
@@ -229,6 +231,9 @@ module.exports.updateHTML = (username, opts) => {
                   medium == null ? "none !important" : "block"
                 };"><a href="https://medium.com/@${medium}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="ant-design:medium-circle-filled" data-width="24" data-height="24"></span></a></span>
                 <span style="display:${
+                  paypal == null ? "none !important" : "block"
+                };"><a href="https://paypal.me/${paypal}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:paypal"></span></a></span>
+                <span style="display:${
                   pinterest == null ? "none !important" : "block"
                 };"><a href="https://pinterest.com/${pinterest}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:pinterest"></span></a></span>
                 <span style="display:${
@@ -246,6 +251,9 @@ module.exports.updateHTML = (username, opts) => {
                 <span style="display:${
                   telegram == null ? "none !important" : "block"
                 };"><a href="https://t.me/${telegram}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="fa-brands:telegram"></span></a></span>
+                <span style="display:${
+                  tvtime == null ? "none !important" : "block"
+                };"><a href="https://tvtime.com/r/${tvtime}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:tvtime"></span></a></span>
                 <span style="display:${
                   tumblr == null ? "none !important" : "block"
                 };"><a href="https://${tumblr}.tumblr.com/" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:tumblr"></span></a></span>

@@ -61,6 +61,7 @@ function uiCommand() {
     const instagram = req.body.instagram ? req.body.instagram : null;
     const keybase = req.body.keybase ? req.body.keybase : null;
     const medium = req.body.medium ? req.body.medium : null;
+    const paypal = req.body.paypal ? req.body.paypal : null;
     const pinterest = req.body.pinterest ? req.body.pinterest : null;
     const reddit = req.body.reddit ? req.body.reddit : null;
     const snapchat = req.body.snapchat ? req.body.snapchat : null;
@@ -69,6 +70,7 @@ function uiCommand() {
       : null;
     const steam = req.body.steam ? req.body.steam : null;
     const telegram = req.body.telegram ? req.body.telegram : null;
+    const tvtime = req.body.tvtime ? req.body.tvtime : null;
     const tumblr = req.body.tumblr ? req.body.tumblr : null;
     const twitch = req.body.twitch ? req.body.twitch : null;
     const twitter = req.body.twitter ? req.body.twitter : null;
@@ -93,12 +95,14 @@ function uiCommand() {
       instagram,
       keybase,
       medium,
+      paypal,
       pinterest,
       reddit,
       snapchat,
       stackexchange,
       steam,
       telegram,
+      tvtime,
       tumblr,
       twitch,
       twitter,

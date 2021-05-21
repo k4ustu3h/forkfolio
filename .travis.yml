@@ -12,7 +12,7 @@ before_install:
 before_script:
   - npm install -g
 script:
-  - forkfolio build k4ustu3h -f -t dark -s updated -c k4ustu3h -d k4ustu3h -D k4ustu3h -e k4ustu3h@gmail.com -F k4ustu3h -i K_ -I k4ustu3h -k k4ustu3h -m k4ustu3h -p k4ustu3h -r kaustubhladiya -S k4ustu3h -E 16727002 -a k4ustu3h -T k4ustu3h -u k4ustu3h -w k4ustu3h -W k4ustu3h -x 9461231 -y UCD79rV3UKNzMCkwMLgyteEw
+  - forkfolio build k4ustu3h -f -t dark -s updated -c k4ustu3h -d k4ustu3h -D k4ustu3h -e k4ustu3h@gmail.com -F k4ustu3h -i K_ -I k4ustu3h -k k4ustu3h -m k4ustu3h -p k4ustu3h -P k4ustu3h -r kaustubhladiya -S k4ustu3h -E 16727002 -a k4ustu3h -T k4ustu3h -V 1B8ed -u k4ustu3h -w k4ustu3h -W k4ustu3h -x 9461231 -y UCD79rV3UKNzMCkwMLgyteEw
   - npm run prettier
 after_success:
   - lhci autorun --upload.target=temporary-public-storage
