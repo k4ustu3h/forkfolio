@@ -35,6 +35,7 @@ module.exports.updateHTML = (username, opts) => {
     includeFork,
     codepen,
     dev,
+    discord,
     dribbble,
     email,
     facebook,
@@ -79,60 +80,52 @@ module.exports.updateHTML = (username, opts) => {
             } else {
               continue;
             }
-            element.innerHTML += `
-
-                        <div class="mdc-card fix mdc-theme--surface mdc-theme--on-primary">
-                          <div class="mdc-card__primary-action" tabindex="0">
-                            <div class="section_title"><a href="${
-                              repos[i].html_url
-                            }" target="_blank" rel="noopener" class="fix">${
+            element.innerHTML += ` <div class="mdc-card fix mdc-theme--surface mdc-theme--on-primary">
+        <div class="mdc-card__primary-action" tabindex="0">
+            <div class="section_title"><a href="${
+              repos[i].html_url
+            }" target="_blank" rel="noopener" class="fix">${
               repos[i].name
             }</a></div>
-                            <div class="about_section" style="display:${
-                              repos[i].description == undefined
-                                ? "none"
-                                : "block"
-                            };">
-                            <span >${convertToEmoji(
-                              repos[i].description
-                            )}</span>
-                            </div>
-                            <div class="mdc-card__action-buttons">
-                              <button
-                                class="mdc-button mdc-card__action mdc-card__action--button mdc-theme--surface mdc-theme--on-primary"
-                                style="display:${
-                                  repos[i].language == null
-                                    ? "none"
-                                    : "inline-block"
-                                };"><a href="${repos[i].html_url}/search?l=${
+            <div class="about_section" style="display:${
+              repos[i].description == undefined ? " none" : "block"
+            };">
+                <span>${convertToEmoji(repos[i].description)}</span>
+            </div>
+            <div class="mdc-card__action-buttons">
+                <button class="mdc-button mdc-card__action mdc-card__action--button mdc-theme--surface mdc-theme--on-primary" style="display:${
+                  repos[i].language == null ? " none" : "inline-block"
+                };"><a href="${repos[i].html_url}/search?l=${
               repos[i].language
             }">
-                                <div class="mdc-button__ripple"></div>
-                                <span class="mdc-button__label"><span class="iconify" data-icon="mdi:code-tags"></span>&nbsp; ${
-                                  repos[i].language
-                                }</span></span></a>
-                              </button>
-                            <button
-                             class="mdc-button mdc-card__action mdc-card__action--button mdc-theme--surface mdc-theme--on-primary"
-                            ><a href="${repos[i].html_url}/stargazers">
-                            <div class="mdc-button__ripple"></div>
-                             <span class="mdc-button__label"><span class="iconify" data-icon="ic:round-star-outline"></span>&nbsp; ${
-                               repos[i].stargazers_count
-                             }</span></a>
-                           </button>
-                           <button
-                             class="mdc-button mdc-card__action mdc-card__action--button mdc-theme--surface mdc-theme--on-primary"
-                           ><a href="${repos[i].html_url}/network/members">
-                             <div class="mdc-button__ripple"></div>
-                             <span class="mdc-button__label"><span class="iconify" data-icon="mdi:source-fork"></span>&nbsp; ${
-                               repos[i].forks_count
-                             }
-                           </span>
-                           </a>
-                         </button>
-                       </div>
-                     </div>
-                   </div>`;
+                        <div class="mdc-button__ripple"></div>
+                        <span class="mdc-button__label"><span class="iconify" data-icon="mdi:code-tags"></span>&nbsp; ${
+                          repos[i].language
+                        }</span></span>
+                    </a>
+                </button>
+                <button class="mdc-button mdc-card__action mdc-card__action--button mdc-theme--surface mdc-theme--on-primary"><a href="${
+                  repos[i].html_url
+                }/stargazers">
+                        <div class="mdc-button__ripple"></div>
+                        <span class="mdc-button__label"><span class="iconify" data-icon="ic:round-star-outline"></span>&nbsp; ${
+                          repos[i].stargazers_count
+                        }</span>
+                    </a>
+                </button>
+                <button class="mdc-button mdc-card__action mdc-card__action--button mdc-theme--surface mdc-theme--on-primary"><a href="${
+                  repos[i].html_url
+                }/network/members">
+                        <div class="mdc-button__ripple"></div>
+                        <span class="mdc-button__label"><span class="iconify" data-icon="mdi:source-fork"></span>&nbsp; ${
+                          repos[i].forks_count
+                        }
+                        </span>
+                    </a>
+                </button>
+            </div>
+        </div>
+        </div>`;
           }
 
           const user = await getUser(username);
@@ -144,17 +137,17 @@ module.exports.updateHTML = (username, opts) => {
 
           document.getElementsByTagName("head")[0].appendChild(icon);
           document.getElementsByTagName("head")[0].innerHTML += `
-          <meta name="description" content="${user.bio}" />
-          <meta property="og:image" content="${user.avatar_url}" />
-          <meta property="og:type" content="profile" />
-          <meta property="og:title" content="${user.login}" />
-          <meta property="og:url" content="${user.html_url}" />
-          <meta property="og:description" content="${user.bio}" />
-          <meta property="profile:username" content="${user.login}" />
-          <meta name="twitter:image:src" content="${user.avatar_url}" />
-          <meta name="twitter:card" content="summary" />
-          <meta name="twitter:title" content="${user.login}" />
-          <meta name="twitter:description" content="${user.bio}" />`;
+        <meta name="description" content="${user.bio}" />
+        <meta property="og:image" content="${user.avatar_url}" />
+        <meta property="og:type" content="profile" />
+        <meta property="og:title" content="${user.login}" />
+        <meta property="og:url" content="${user.html_url}" />
+        <meta property="og:description" content="${user.bio}" />
+        <meta property="profile:username" content="${user.login}" />
+        <meta name="twitter:image:src" content="${user.avatar_url}" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="${user.login}" />
+        <meta name="twitter:description" content="${user.bio}" />`;
 
           // Decides if initials or profile picture is used
           if (initials == null) {
@@ -185,139 +178,119 @@ module.exports.updateHTML = (username, opts) => {
 
           // Social Media links and other info about the user
           document.getElementById("about").innerHTML = `
-                <span style="display:${
-                  user.company == null || !user.company ? "none" : "block"
-                };"><span class="iconify" data-icon="mdi:office-building"></span> &nbsp; ${
+        <span style="display:${
+          user.company == null || !user.company ? " none" : "block"
+        };"><span class="iconify" data-icon="mdi:office-building"></span> &nbsp; ${
             user.company
           }</span>
-                <span style="display:block;"><a href="${
-                  user.html_url
-                }"><span class="iconify" data-icon="simple-icons:github"></span>&nbsp;&nbsp;@${
+        <span style="display:block;"><a href="${
+          user.html_url
+        }"><span class="iconify" data-icon="simple-icons:github"></span>&nbsp;&nbsp;@${
             user.login
           }</a></span>
-                <span style="display:${
-                  email == null ? "none !important" : "block"
-                };"><a href="mailto:${email}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="mdi:email-outline"></span>&nbsp;&nbsp;${email}</a></span>
-                <span style="display:${
-                  user.location == null || !user.location ? "none" : "block"
-                };"><a href="https://www.google.com/maps/search/?api=1&query=${
+        <span style="display:${
+          email == null ? " none !important" : "block"
+        };"><a href="mailto:${email}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="mdi:email-outline"></span>&nbsp;&nbsp;${email}</a></span>
+        <span style="display:${
+          user.location == null || !user.location ? " none" : "block"
+        };"><a href="https://www.google.com/maps/search/?api=1&query=${
             user.location
           }"><span class="iconify" data-icon="mdi:map-marker-outline"></span>&nbsp;&nbsp;${
             user.location
           }</a></span>
-                <span style="display:${
-                  user.hireable == false || !user.hireable ? "none" : "block"
-                };"><span class="iconify" data-icon="mdi:account-tie-outline"></span>&nbsp;&nbsp;Available for hire</span>
-                <div class="socials">
-                <span style="display:${
-                  codepen == null ? "none !important" : "block"
-                };"><a href="https://codepen.io/${codepen}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:codepen"></span></a></span>
-                <span style="display:${
-                  dev == null ? "none !important" : "block"
-                };"><a href="https://dev.to/${dev}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="fa-brands:dev"></span></a></span>
-                <span style="display:${
-                  dribbble == null ? "none !important" : "block"
-                };"><a href="https://www.dribbble.com/${dribbble}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:dribbble"></span></a></span>
-                <span style="display:${
-                  facebook == null ? "none !important" : "block"
-                };"><a href="https://fb.me/${facebook}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:facebook"></span></a></span>
-                <span style="display:${
-                  instagram == null ? "none !important" : "block"
-                };"><a href="https://www.instagram.com/${instagram}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:instagram"></span></a></span>
-                <span style="display:${
-                  keybase == null ? "none !important" : "block"
-                };"><a href="https://keybase.io/${keybase}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:keybase"></span></a></span>
-                <span style="display:${
-                  medium == null ? "none !important" : "block"
-                };"><a href="https://medium.com/@${medium}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="ant-design:medium-circle-filled" data-width="24" data-height="24"></span></a></span>
-                <span style="display:${
-                  paypal == null ? "none !important" : "block"
-                };"><a href="https://paypal.me/${paypal}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:paypal"></span></a></span>
-                <span style="display:${
-                  pinterest == null ? "none !important" : "block"
-                };"><a href="https://pinterest.com/${pinterest}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:pinterest"></span></a></span>
-                <span style="display:${
-                  reddit == null ? "none !important" : "block"
-                };"><a href="https://www.reddit.com/u/${reddit}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:reddit"></span></a></span>
-                <span style="display:${
-                  snapchat == null ? "none !important" : "block"
-                };"><a href="https://www.snapchat.com/add/${snapchat}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="fa-brands:snapchat"></span></a></span>
-                <span style="display:${
-                  stackexchange == null ? "none !important" : "block"
-                };"><a href="https://stackexchange.com/users/${stackexchange}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="fa-brands:stack-exchange"></span></a></span>
-                <span style="display:${
-                  steam == null ? "none !important" : "block"
-                };"><a href="https://steamcommunity.com/id/${steam}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:steam"></span></a></span>
-                <span style="display:${
-                  telegram == null ? "none !important" : "block"
-                };"><a href="https://t.me/${telegram}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="fa-brands:telegram"></span></a></span>
-                <span style="display:${
-                  tvtime == null ? "none !important" : "block"
-                };"><a href="https://tvtime.com/r/${tvtime}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:tvtime"></span></a></span>
-                <span style="display:${
-                  tumblr == null ? "none !important" : "block"
-                };"><a href="https://${tumblr}.tumblr.com/" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:tumblr"></span></a></span>
-                <span style="display:${
-                  twitter == null ? "none !important" : "block"
-                };"><a href="https://www.twitch.tv/${twitch}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:twitch"></span></a></span>
-                <span style="display:${
-                  twitter == null ? "none !important" : "block"
-                };"><a href="https://www.twitter.com/${twitter}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="ant-design:twitter-circle-filled" data-width="24" data-height="24"></span></a></span>
-                <span style="display:${
-                  xda == null ? "none !important" : "block"
-                };"><a href="https://forum.xda-developers.com/member.php?u=${xda}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="simple-icons:xdadevelopers"></span></a></span>
-                <span style="display:${
-                  youtube == null ? "none !important" : "block"
-                };"><a href="https://www.youtube.com/channel/${youtube}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="entypo-social:youtube-with-circle"></span></a></span>
-                </div>
-                </div>
-                `;
+        <span style="display:${
+          user.hireable == false || !user.hireable ? " none" : "block"
+        };"><span class="iconify" data-icon="mdi:account-tie-outline"></span>&nbsp;&nbsp;Available for hire</span>
+        <div class="socials">
+            <span style="display:${
+              codepen == null ? " none !important" : "block"
+            };"><a class="socials" href="https://codepen.io/${codepen}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:codepen"></span></a></span>
+            <span style="display:${
+              dev == null ? " none !important" : "block"
+            };"><a class="socials" href="https://dev.to/${dev}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:devdotto"></span></a></span>
+            <span style="display:${
+              discord == null ? " none !important" : "block"
+            };"><a class="socials" onclick="validate()" rel="noopener" style="cursor: pointer" target="_blank"><span class="iconify" data-icon="simple-icons:discord"></span></a></span>
+            <span style="display:${
+              dribbble == null ? " none !important" : "block"
+            };"><a class="socials" href="https://www.dribbble.com/${dribbble}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:dribbble"></span></a></span>
+            <span style="display:${
+              facebook == null ? " none !important" : "block"
+            };"><a class="socials" href="https://fb.me/${facebook}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:facebook"></span></a></span>
+            <span style="display:${
+              instagram == null ? " none !important" : "block"
+            };"><a class="socials" href="https://www.instagram.com/${instagram}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:instagram"></span></a></span>
+            <span style="display:${
+              keybase == null ? " none !important" : "block"
+            };"><a class="socials" href="https://keybase.io/${keybase}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:keybase"></span></a></span>
+            <span style="display:${
+              medium == null ? " none !important" : "block"
+            };"><a class="socials" href="https://medium.com/@${medium}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:medium"></span></a></span>
+            <span style="display:${
+              paypal == null ? " none !important" : "block"
+            };"><a class="socials" href="https://paypal.me/${paypal}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:paypal"></span></a></span>
+            <span style="display:${
+              pinterest == null ? " none !important" : "block"
+            };"><a class="socials" href="https://pinterest.com/${pinterest}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:pinterest"></span></a></span>
+            <span style="display:${
+              reddit == null ? " none !important" : "block"
+            };"><a class="socials" href="https://www.reddit.com/u/${reddit}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:reddit"></span></a></span>
+            <span style="display:${
+              snapchat == null ? " none !important" : "block"
+            };"><a class="socials" href="https://www.snapchat.com/add/${snapchat}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:snapchat"></span></a></span>
+            <span style="display:${
+              stackexchange == null ? " none !important" : "block"
+            };"><a class="socials" href="https://stackexchange.com/users/${stackexchange}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:stackexchange"></span></a></span>
+            <span style="display:${
+              steam == null ? " none !important" : "block"
+            };"><a class="socials" href="https://steamcommunity.com/id/${steam}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:steam"></span></a></span>
+            <span style="display:${
+              telegram == null ? " none !important" : "block"
+            };"><a class="socials" href="https://t.me/${telegram}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:telegram"></span></a></span>
+            <span style="display:${
+              tvtime == null ? " none !important" : "block"
+            };"><a class="socials" href="https://tvtime.com/r/${tvtime}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:tvtime"></span></a></span>
+            <span style="display:${
+              tumblr == null ? " none !important" : "block"
+            };"><a class="socials" href="https://${tumblr}.tumblr.com/" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:tumblr"></span></a></span>
+            <span style="display:${
+              twitter == null ? " none !important" : "block"
+            };"><a class="socials" href="https://www.twitch.tv/${twitch}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:twitch"></span></a></span>
+            <span style="display:${
+              twitter == null ? " none !important" : "block"
+            };"><a class="socials" href="https://www.twitter.com/${twitter}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:twitter"></span></a></span>
+            <span style="display:${
+              xda == null ? " none !important" : "block"
+            };"><a class="socials" href="https://forum.xda-developers.com/member.php?u=${xda}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:xdadevelopers"></span></a></span>
+            <span style="display:${
+              youtube == null ? " none !important" : "block"
+            };"><a class="socials" href="https://www.youtube.com/channel/${youtube}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:youtube"></span></a></span>
+        </div>
+        </div>
+        `;
+
+          document.getElementById(
+            "snackbar"
+          ).innerHTML = `<div class="mdc-snackbar">
+            <div class="mdc-snackbar__surface">
+                <div class="mdc-snackbar__label" role="username" aria-live="polite">${discord}</div>
+                <div class="mdc-snackbar__actions"> <a href="https://discord.com/channels/@me" style="text-decoration: none"><button class="mdc-button mdc-snackbar__action" id="username" type="button">
+                            <div class="mdc-button__ripple"></div><span class="mdc-button__label" id="snackbar_button">Open Discord</span>
+                        </button></a></div>
+            </div>
+        </div>`;
 
           if (gradient == null) {
             var div = document.getElementById("style");
             div.remove();
           } else {
             document.getElementById("style").innerHTML = `<style>
-          :root {
-            --gradient: linear-gradient(${gradient});
+            :root {
+                --gradient: linear-gradient(${gradient}
+              );
+            }
+        </style>`;
           }
-          </style>`;
-          }
-
-          document.getElementById("script").innerHTML = `<script>
-          //Magic Grid
-          const magicProjectsGrid = new MagicGrid({
-            container: "#work_section",
-            animate: false,
-            gutter: 30, // default gutter size
-            static: true,
-            useMin: false,
-            maxColumns: 2,
-            useTransform: true,
-          });
-
-          const magicForksGrid = new MagicGrid({
-            container: "#forks_section",
-            animate: false,
-            gutter: 30, // default gutter size
-            static: true,
-            useMin: false,
-            maxColumns: 2,
-            useTransform: true,
-          });
-
-          $("document").ready(() => {
-            magicProjectsGrid.listen();
-            magicForksGrid.listen();
-          });
-
-          const buttons = document.querySelectorAll(
-            ".mdc-button, .mdc-icon-button, .mdc-card__primary-action, .mdc-card__action, .mdc-card__action--button"
-          );
-          for (const button of buttons) {
-            mdc.ripple.MDCRipple.attachTo(button);
-          }
-          </script>`;
 
           //add data to config.json
           const data = await getConfig();

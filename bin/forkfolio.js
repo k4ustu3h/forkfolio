@@ -23,25 +23,26 @@ program
   )
   .option("-b, --background [background]", "set the background image")
   .option("-f, --fork", "includes forks with repos")
+  .option(
+    "-g, --gradient [direction,color1,color2...]",
+    "specify your preferred gradient"
+  )
   .option("-o, --order [order]", "set default order on sort", "asc")
   .option("-s, --sort [sort]", "set default sort for repository", "created")
   .option("-t, --theme [theme]", "specify a theme to use", "light")
 
   .option("-c, --codepen [username]", "specify codepen username")
   .option("-d, --dev [username]", "specify dev username")
+  .option("-C, --discord [username#tag]", "specify discord username with tag")
   .option("-D, --dribbble [username]", "specify dribbble username")
   .option("-e, --email [email]", "specify email")
   .option("-F, --facebook [username]", "specify facebook username")
-  .option(
-    "-g, --gradient [direction,color1,color2...]",
-    "specify your preferred gradient"
-  )
   .option("-i, --initials [initials]", "specify your initials")
   .option("-I, --instagram [username]", "specify instagram username")
   .option("-k, --keybase [username]", "specify keybase username")
   .option("-m, --medium [username]", "specify medium username")
-  .option("-p, --paypal [username]", "specify paypal username")
-  .option("-P, --pinterest [username]", "specify pinterest username")
+  .option("-P, --paypal [username]", "specify paypal username")
+  .option("-n, --pinterest [username]", "specify pinterest username")
   .option("-r, --reddit [username]", "specify reddit username")
   .option("-S, --snapchat [username]", "specify snapchat username")
   .option("-E, --stackexchange [user id]", "specify stackexchange user id")

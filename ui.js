@@ -53,6 +53,7 @@ function uiCommand() {
     const types = ["owner"];
     const codepen = req.body.codepen ? req.body.codepen : null;
     const dev = req.body.dev ? req.body.dev : null;
+    const discord = req.body.discord ? req.body.discord : null;
     const dribbble = req.body.dribbble ? req.body.dribbble : null;
     const email = req.body.email ? req.body.email : null;
     const facebook = req.body.facebook ? req.body.facebook : null;
@@ -87,6 +88,7 @@ function uiCommand() {
       types,
       codepen,
       dev,
+      discord,
       dribbble,
       email,
       facebook,

@@ -6,7 +6,7 @@
       rgb(10, 10, 10, 0.4)
     ),
     url("{{{background}}}");
-  --gradient: linear-gradient(90deg, #009bef, #c471ed, #b31818);
+  --gradient: linear-gradient(90deg, #2962ff, #a0f, #d50000);
   --mdc-theme-background: #fff;
   --mdc-theme-on-primary: #000;
   --mdc-theme-primary: #000;

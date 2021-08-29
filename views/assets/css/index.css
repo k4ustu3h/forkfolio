@@ -101,13 +101,13 @@ form {
 }
 
 :root {
-  --gradient: linear-gradient(90deg, #b31818, #c471ed, #009bef);
+  --gradient: linear-gradient(90deg, #d50000, #a0f, #2962ff);
   --mdc-theme-background: #fff;
-  --mdc-theme-on-primary: #000;
-  --mdc-theme-on-secondary: #000;
+  --mdc-theme-on-primary: #fff;
+  --mdc-theme-on-secondary: #fff;
   --mdc-theme-on-surface: #000;
-  --mdc-theme-primary: #009bef;
-  --mdc-theme-secondary: #009bef;
+  --mdc-theme-primary: #2962ff;
+  --mdc-theme-secondary: #2962ff;
   --mdc-theme-surface: #fff;
   --mdc-typography-font-family: "Manrope", sans-serif;
 }

@@ -1,7 +1,7 @@
 {
   "overrides": [
     {
-      "files": ["*.html", "*.ejs"],
+      "files": ["*.html", "*.ejs", "*.xml", "*.svg"],
       "options": {
         "parser": "html",
         "htmlWhitespaceSensitivity": "ignore"

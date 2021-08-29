@@ -10,9 +10,7 @@
 
 ## personal website + blog for every github user
 
-Gitfolio will help you get started with a portfolio website where you could showcase your work + a blog that will help you spread your ideas into real world.
-
-<img src="https://i.imgur.com/eA6clZr.png">
+Forkfolio will help you get started with a portfolio website where you could showcase your work + a blog that will help you spread your ideas into real world.
 
 ---
 
@@ -124,7 +122,7 @@ You can either use your GitHub profile picture or you can add your initials in a
 You can also customize the gradient that your initials by specifying your preferred colors in (xdeg,#color1,#color2,...) format using `-g` or `--gradient` argument.
 
 ```sh
-➜  ~ forkfolio build <username> --gradient 90deg,#009bef,#c471ed,#b31818
+➜  ~ forkfolio build <username> --gradient 90deg,#2962ff,#aa00ff,#d50000
 ```
 
 #### Add Social Media links on your profile
@@ -133,20 +131,21 @@ forkfolio supports adding the following Social links
 
 -   Codepen `-c, --codepen <username>`
 -   Dev.to `-d, --dev <username>`
+-   Discord `-C, --discord <username#tag>`
 -   Dribbble `-D, --dribbble <username>`
 -   Email `-e, --email <email>`
 -   Facebook `-F, --facebook <username>`
 -   Instagram `-I, --instagram <username>`
 -   Keybase `-k, --keybase <username>`
 -   Medium `-m, --medium <username>`
--   PayPal `-p, --paypal <username>`
--   Pinterest `-P, --pinterest <username>`
+-   PayPal `-P, --paypal <username>`
+-   Pinterest `-n, --pinterest <username>`
 -   Reddit `-r, --reddit <username>`
 -   Snapchat `-S, --snapchat <username>`
 -   Stack Exchange `-E, --stackexchange <user id>`
--   Steam `-st, --steam <username>`
+-   Steam `-a, --steam <username>`
 -   Telegram `-T, --telegram <username>`
--   TV Time `-v, --tvtime <user id>`
+-   TV Time `-V, --tvtime <user id>`
 -   Tumblr `-u, --tumblr <username>`
 -   Twitch `-w, --twitch <username>`
 -   Twitter `-W, --twitter <username>`
@@ -154,7 +153,7 @@ forkfolio supports adding the following Social links
 -   YouTube `-y, --youtube <channel id>`
 
 ```sh
-➜  ~ forkfolio build <username> --twitter k4ustu3h --reddit kaustubhladiya
+➜  ~ forkfolio build <username> --discord k4ustu3h#5045 --reddit kaustubhladiya --twitter k4ustu3h
 ```
 
 ---

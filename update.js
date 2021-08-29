@@ -18,6 +18,7 @@ async function updateCommand() {
     types: data[0].types,
     codepen: data[0].codepen,
     dev: data[0].dev,
+    discord: data[0].discord,
     dribbble: data[0].dribbble,
     email: data[0].email,
     facebook: data[0].facebook,

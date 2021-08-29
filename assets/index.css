@@ -4,7 +4,6 @@ body {
   color: var(--mdc-theme-on-primary);
   font-family: "Manrope", sans-serif;
   font-feature-settings: "calt", "liga";
-  font-size: 64px;
   font-variant-ligatures: normal;
   font-weight: 700;
   margin: 0%;
@@ -151,6 +150,7 @@ a {
 
 .projects {
   margin-left: -15px;
+
   /* align section w/ heading above */
 }
 
@@ -173,6 +173,7 @@ a {
 .fix {
   /* 30px is the gutter size in magic grid */
   width: calc(49% - 30px);
+
   /* 49% avoids a weird single column on some wide screens */
 }
 
@@ -184,7 +185,7 @@ a {
 }
 
 .section_title a {
-  margin-right: 0px;
+  margin-right: 0;
 }
 
 .about_section {
@@ -225,6 +226,12 @@ a {
   font-variant-ligatures: normal;
   font-weight: 700;
   text-decoration: none;
+}
+
+#snackbar_button {
+  color: var(--mdc-theme-primary);
+  font-family: "Manrope", sans-serif;
+  font-size: 0.875rem;
 }
 
 @media (max-width: 800px) {
@@ -286,6 +293,7 @@ a {
 
   .projects {
     margin-left: 0;
+
     /* remove neg margin to align w/ header */
   }
 
