@@ -50,9 +50,8 @@
         </a>
       </div>
     </div>
-    <div id="style"></div>
+    <div id="gradient"></div>
     <script>
-      //Magic Grid
       const magicProjectsGrid = new MagicGrid({
         container: "#work_section",
         animate: false,
@@ -79,16 +78,31 @@
       });
 
       const buttons = document.querySelectorAll(
-        ".mdc-button, .mdc-icon-button, .mdc-card__primary-action, .mdc-card__action, .mdc-card__action--button"
+        ".mdc-button, .mdc-card__primary-action, .mdc-card__action, .mdc-card__action--button"
       );
       for (const button of buttons) {
         mdc.ripple.MDCRipple.attachTo(button);
       }
+
+      const iconButtons = document.querySelectorAll(".mdc-icon-button");
+      for (const iconButton of iconButtons) {
+        var ripple = new mdc.ripple.MDCRipple(iconButton);
+        ripple.unbounded = true;
+      }
+
       const snackbar = new window.mdc.snackbar.MDCSnackbar(
         document.querySelector(".mdc-snackbar")
       );
 
-      function validate() {
+      function copyToClipboard(element) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($(element).text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+      }
+
+      function openSnackbar() {
         snackbar.open();
       }
     </script>

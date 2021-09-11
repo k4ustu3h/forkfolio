@@ -92,14 +92,15 @@ module.exports.updateHTML = (username, opts) => {
             };">
                 <span>${convertToEmoji(repos[i].description)}</span>
             </div>
+            <div class="mdc-card__actions">
             <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button mdc-theme--surface mdc-theme--on-primary" style="display:${
+                <button class="mdc-button mdc-card__action mdc-card__action--button" style="display:${
                   repos[i].language == null ? " none" : "inline-block"
                 };"><a href="${repos[i].html_url}/search?l=${
               repos[i].language
             }">
                         <div class="mdc-button__ripple"></div>
-                        <span class="mdc-button__label"><span class="iconify" data-icon="mdi:code-tags"></span>&nbsp; ${
+                        <span class="mdc-button__label"><span class="iconify mdc-button__icon" data-icon="mdi:code-tags"></span>${
                           repos[i].language
                         }</span></span>
                     </a>
@@ -108,7 +109,7 @@ module.exports.updateHTML = (username, opts) => {
                   repos[i].html_url
                 }/stargazers">
                         <div class="mdc-button__ripple"></div>
-                        <span class="mdc-button__label"><span class="iconify" data-icon="ic:round-star-outline"></span>&nbsp; ${
+                        <span class="mdc-button__label"><span class="iconify mdc-button__icon" data-icon="ic:round-star-outline"></span>${
                           repos[i].stargazers_count
                         }</span>
                     </a>
@@ -117,12 +118,13 @@ module.exports.updateHTML = (username, opts) => {
                   repos[i].html_url
                 }/network/members">
                         <div class="mdc-button__ripple"></div>
-                        <span class="mdc-button__label"><span class="iconify" data-icon="mdi:source-fork"></span>&nbsp; ${
+                        <span class="mdc-button__label"><span class="iconify mdc-button__icon" data-icon="mdi:source-fork"></span>${
                           repos[i].forks_count
                         }
                         </span>
                     </a>
                 </button>
+            </div>
             </div>
         </div>
         </div>`;
@@ -204,87 +206,96 @@ module.exports.updateHTML = (username, opts) => {
         <div class="socials">
             <span style="display:${
               codepen == null ? " none !important" : "block"
-            };"><a class="socials" href="https://codepen.io/${codepen}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:codepen"></span></a></span>
+            };"><a aria-label="codepen" class="socials" href="https://codepen.io/${codepen}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:codepen"></span></a></span>
             <span style="display:${
               dev == null ? " none !important" : "block"
-            };"><a class="socials" href="https://dev.to/${dev}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:devdotto"></span></a></span>
+            };"><a aria-label="dev" class="socials" href="https://dev.to/${dev}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:devdotto"></span></a></span>
             <span style="display:${
               discord == null ? " none !important" : "block"
-            };"><a class="socials" onclick="validate()" rel="noopener" style="cursor: pointer" target="_blank"><span class="iconify" data-icon="simple-icons:discord"></span></a></span>
+            };"><a class="socials" onclick="openSnackbar()" rel="noopener" style="cursor: pointer" target="_blank"><span class="iconify" data-icon="simple-icons:discord"></span></a></span>
             <span style="display:${
               dribbble == null ? " none !important" : "block"
-            };"><a class="socials" href="https://www.dribbble.com/${dribbble}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:dribbble"></span></a></span>
+            };"><a aria-label="dribbble" class="socials" href="https://www.dribbble.com/${dribbble}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:dribbble"></span></a></span>
             <span style="display:${
               facebook == null ? " none !important" : "block"
-            };"><a class="socials" href="https://fb.me/${facebook}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:facebook"></span></a></span>
+            };"><a aria-label="facebook" class="socials" href="https://fb.me/${facebook}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:facebook"></span></a></span>
             <span style="display:${
               instagram == null ? " none !important" : "block"
-            };"><a class="socials" href="https://www.instagram.com/${instagram}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:instagram"></span></a></span>
+            };"><a aria-label="instagram" class="socials" href="https://www.instagram.com/${instagram}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:instagram"></span></a></span>
             <span style="display:${
               keybase == null ? " none !important" : "block"
-            };"><a class="socials" href="https://keybase.io/${keybase}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:keybase"></span></a></span>
+            };"><a aria-label="keybase" class="socials" href="https://keybase.io/${keybase}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:keybase"></span></a></span>
             <span style="display:${
               medium == null ? " none !important" : "block"
-            };"><a class="socials" href="https://medium.com/@${medium}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:medium"></span></a></span>
+            };"><a aria-label="medium" class="socials" href="https://medium.com/@${medium}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:medium"></span></a></span>
             <span style="display:${
               paypal == null ? " none !important" : "block"
-            };"><a class="socials" href="https://paypal.me/${paypal}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:paypal"></span></a></span>
+            };"><a aria-label="paypal" class="socials" href="https://paypal.me/${paypal}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:paypal"></span></a></span>
             <span style="display:${
               pinterest == null ? " none !important" : "block"
-            };"><a class="socials" href="https://pinterest.com/${pinterest}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:pinterest"></span></a></span>
+            };"><a aria-label="pinterest" class="socials" href="https://pinterest.com/${pinterest}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:pinterest"></span></a></span>
             <span style="display:${
               reddit == null ? " none !important" : "block"
-            };"><a class="socials" href="https://www.reddit.com/u/${reddit}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:reddit"></span></a></span>
+            };"><a aria-label="reddit" class="socials" href="https://www.reddit.com/u/${reddit}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:reddit"></span></a></span>
             <span style="display:${
               snapchat == null ? " none !important" : "block"
-            };"><a class="socials" href="https://www.snapchat.com/add/${snapchat}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:snapchat"></span></a></span>
+            };"><a aria-label="snapchat" class="socials" href="https://www.snapchat.com/add/${snapchat}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:snapchat"></span></a></span>
             <span style="display:${
               stackexchange == null ? " none !important" : "block"
-            };"><a class="socials" href="https://stackexchange.com/users/${stackexchange}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:stackexchange"></span></a></span>
+            };"><a aria-label="stackexchange" class="socials" href="https://stackexchange.com/users/${stackexchange}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:stackexchange"></span></a></span>
             <span style="display:${
               steam == null ? " none !important" : "block"
-            };"><a class="socials" href="https://steamcommunity.com/id/${steam}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:steam"></span></a></span>
+            };"><a aria-label="steam" class="socials" href="https://steamcommunity.com/id/${steam}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:steam"></span></a></span>
             <span style="display:${
               telegram == null ? " none !important" : "block"
-            };"><a class="socials" href="https://t.me/${telegram}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:telegram"></span></a></span>
+            };"><a aria-label="telegram" class="socials" href="https://t.me/${telegram}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:telegram"></span></a></span>
             <span style="display:${
               tvtime == null ? " none !important" : "block"
-            };"><a class="socials" href="https://tvtime.com/r/${tvtime}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:tvtime"></span></a></span>
+            };"><a aria-label="tvtime" class="socials" href="https://tvtime.com/r/${tvtime}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:tvtime"></span></a></span>
             <span style="display:${
               tumblr == null ? " none !important" : "block"
-            };"><a class="socials" href="https://${tumblr}.tumblr.com/" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:tumblr"></span></a></span>
+            };"><a aria-label="tumblr" class="socials" href="https://${tumblr}.tumblr.com/" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:tumblr"></span></a></span>
+            <span style="display:${
+              twitch == null ? " none !important" : "block"
+            };"><a aria-label="twitch" class="socials" href="https://www.twitch.tv/${twitch}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:twitch"></span></a></span>
             <span style="display:${
               twitter == null ? " none !important" : "block"
-            };"><a class="socials" href="https://www.twitch.tv/${twitch}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:twitch"></span></a></span>
-            <span style="display:${
-              twitter == null ? " none !important" : "block"
-            };"><a class="socials" href="https://www.twitter.com/${twitter}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:twitter"></span></a></span>
+            };"><a aria-label="twitter" class="socials" href="https://www.twitter.com/${twitter}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:twitter"></span></a></span>
             <span style="display:${
               xda == null ? " none !important" : "block"
-            };"><a class="socials" href="https://forum.xda-developers.com/member.php?u=${xda}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:xdadevelopers"></span></a></span>
+            };"><a aria-label="xda" class="socials" href="https://forum.xda-developers.com/member.php?u=${xda}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:xdadevelopers"></span></a></span>
             <span style="display:${
               youtube == null ? " none !important" : "block"
-            };"><a class="socials" href="https://www.youtube.com/channel/${youtube}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:youtube"></span></a></span>
+            };"><a aria-label="youtube" class="socials" href="https://www.youtube.com/channel/${youtube}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:youtube"></span></a></span>
         </div>
         </div>
         `;
 
-          document.getElementById(
-            "snackbar"
-          ).innerHTML = `<div class="mdc-snackbar">
-            <div class="mdc-snackbar__surface">
-                <div class="mdc-snackbar__label" role="username" aria-live="polite">${discord}</div>
-                <div class="mdc-snackbar__actions"> <a href="https://discord.com/channels/@me" style="text-decoration: none"><button class="mdc-button mdc-snackbar__action" id="username" type="button">
-                            <div class="mdc-button__ripple"></div><span class="mdc-button__label" id="snackbar_button">Open Discord</span>
-                        </button></a></div>
+          document.getElementById("snackbar").innerHTML = `<div id="snackbar">
+            <div class="mdc-snackbar">
+                <div class="mdc-snackbar__surface">
+                    <div aria-live="polite" class="mdc-snackbar__label" id="discord_username" role="username">
+                        ${discord}
+                    </div>
+                    <button class="mdc-icon-button" onclick="copyToClipboard('#discord_username')">
+                        <div class="mdc-icon-button__ripple"></div>
+                        <span class="iconify" data-icon="ic:outline-content-copy"></span>
+                    </button>
+                    <div class="mdc-snackbar__actions">
+                        <a href="https://discord.com/channels/@me" style="text-decoration: none"><button class="mdc-button mdc-snackbar__action" type="button">
+                                <div class="mdc-button__ripple"></div>
+                                <span class="mdc-button__label mdc-theme--primary">Open Discord</span>
+                            </button></a>
+                    </div>
+                </div>
             </div>
         </div>`;
 
           if (gradient == null) {
-            var div = document.getElementById("style");
+            var div = document.getElementById("gradient");
             div.remove();
           } else {
-            document.getElementById("style").innerHTML = `<style>
+            document.getElementById("gradient").innerHTML = `<style>
             :root {
                 --gradient: linear-gradient(${gradient}
               );

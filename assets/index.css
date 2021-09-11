@@ -158,14 +158,6 @@ a {
   text-decoration: none;
 }
 
-.projects button {
-  display: inline-block;
-  padding: 16px;
-  padding-bottom: 38px;
-  margin: 16px;
-  margin-bottom: 12px;
-}
-
 .mdc-card__action-buttons a {
   color: var(--mdc-theme-on-primary);
 }
@@ -226,12 +218,6 @@ a {
   font-variant-ligatures: normal;
   font-weight: 700;
   text-decoration: none;
-}
-
-#snackbar_button {
-  color: var(--mdc-theme-primary);
-  font-family: "Manrope", sans-serif;
-  font-size: 0.875rem;
 }
 
 @media (max-width: 800px) {
@@ -299,11 +285,6 @@ a {
 
   .fix {
     width: 100%;
-  }
-
-  .projects button {
-    padding-bottom: 38px;
-    margin-bottom: 8px;
   }
 
   .projects section {
