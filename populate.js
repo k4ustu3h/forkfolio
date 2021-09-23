@@ -126,6 +126,7 @@ module.exports.updateHTML = (username, opts) => {
                 </button>
             </div>
             </div>
+            <div class="mdc-card__ripple"></div>
         </div>
         </div>`;
           }

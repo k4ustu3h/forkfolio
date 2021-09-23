@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>forkfolio UI</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Asap&family=Asap+Condensed&family=Manrope:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Asap+Condensed&family=Manrope&display=swap"
       rel="stylesheet"
     />
     <link
@@ -30,6 +30,8 @@
           id="username"
           name="username"
           type="text"
+          required
+          minlength="1"
         />
         <span class="mdc-floating-label label" id="username">username</span>
         <span class="mdc-line-ripple line-ripple"></span>
@@ -43,6 +45,7 @@
             <button
               class="mdc-button mdc-snackbar__action"
               id="username"
+              onclick="retry()"
               type="button"
             >
               <div class="mdc-button__ripple"></div>
@@ -104,6 +107,8 @@
             <div class="mdc-radio__ripple"></div>
           </div>
           <label for="created">Created</label>
+        </div>
+        <div class="mdc-form-field">
           <div class="mdc-radio">
             <input
               checked
@@ -120,6 +125,8 @@
             <div class="mdc-radio__ripple"></div>
           </div>
           <label for="full_name">Full Name</label>
+        </div>
+        <div class="mdc-form-field">
           <div class="mdc-radio">
             <input
               class="mdc-radio__native-control"
@@ -135,13 +142,15 @@
             <div class="mdc-radio__ripple"></div>
           </div>
           <label for="pushed">Pushed</label>
+        </div>
+        <div class="mdc-form-field">
           <div class="mdc-radio">
             <input
               class="mdc-radio__native-control"
-              id="star"
+              id="stars"
               name="sort"
               type="radio"
-              value="star"
+              value="stars"
             />
             <div class="mdc-radio__background">
               <div class="mdc-radio__outer-circle"></div>
@@ -149,7 +158,9 @@
             </div>
             <div class="mdc-radio__ripple"></div>
           </div>
-          <label for="star">Star</label>
+          <label for="stars">Stars</label>
+        </div>
+        <div class="mdc-form-field">
           <div class="mdc-radio">
             <input
               class="mdc-radio__native-control"
@@ -184,6 +195,8 @@
             <div class="mdc-radio__ripple"></div>
           </div>
           <label for="asc">Ascending</label>
+        </div>
+        <div class="mdc-form-field">
           <div class="mdc-radio">
             <input
               class="mdc-radio__native-control"
@@ -247,88 +260,95 @@
           </div>
           <label for="styles_switch">Show Styling Options</label>
         </div>
-        <div style="display: none" id="styles">
-          <div class="mdc-form-field">
-            <div class="mdc-checkbox">
+        <div style="display: none" class="mdc-layout-grid" id="styles">
+          <div class="mdc-layout-grid__inner">
+            <div
+              class="mdc-form-field mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop"
+            >
+              <div class="mdc-checkbox">
+                <input
+                  checked
+                  class="mdc-checkbox__native-control"
+                  id="theme"
+                  name="theme"
+                  type="checkbox"
+                />
+                <div class="mdc-checkbox__background">
+                  <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                    <path
+                      class="mdc-checkbox__checkmark-path"
+                      fill="none"
+                      d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                    />
+                  </svg>
+                  <div class="mdc-checkbox__mixedmark"></div>
+                </div>
+                <div class="mdc-checkbox__ripple"></div>
+              </div>
+              <label for="theme">Use Dark Theme</label>
+            </div>
+            <br />
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
+            >
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="mdi:alphabet-latin"
+              >
+                Initials
+              </span>
               <input
-                checked
-                class="mdc-checkbox__native-control"
-                id="theme"
-                name="theme"
-                type="checkbox"
+                class="mdc-text-field__input"
+                id="initials"
+                maxlength="3"
+                name="initials"
               />
-              <div class="mdc-checkbox__background">
-                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                  <path
-                    class="mdc-checkbox__checkmark-path"
-                    fill="none"
-                    d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                  />
-                </svg>
-                <div class="mdc-checkbox__mixedmark"></div>
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="initials">
+                    Initials
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-checkbox__ripple"></div>
+              <div class="mdc-text-field-helper-line">
+                <div class="mdc-text-field-character-counter">0 / 3</div>
+              </div>
             </div>
-            <label for="theme">Use Dark Theme</label>
-          </div>
-          <br />
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="mdi:alphabet-latin"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              Initials
-            </span>
-            <input
-              class="mdc-text-field__input"
-              id="initials"
-              maxlength="3"
-              name="initials"
-            />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="initials">
-                  Initials
-                </label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="ic:round-gradient"
+              >
+                Gradient
+              </span>
+              <input
+                class="mdc-text-field__input"
+                id="gradient"
+                name="gradient"
+              />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="gradient">
+                    Gradient
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
-            </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="ic:round-gradient"
-            >
-              Gradient
-            </span>
-            <input
-              class="mdc-text-field__input"
-              id="gradient"
-              name="gradient"
-            />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="gradient">
-                  Gradient
-                </label>
-              </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
           </div>
         </div>
@@ -355,585 +375,612 @@
           <label for="socials">Include Socials</label>
         </div>
         <br />
-        <div style="display: none" id="input_for_socials">
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="simple-icons:codepen"
+        <div
+          style="display: none"
+          class="mdc-layout-grid"
+          id="input_for_socials"
+        >
+          <div class="mdc-layout-grid__inner">
+            <div
+              class="
+                     mdc-layout-grid__cell mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     "
             >
-              CodePen
-            </span>
-            <input class="mdc-text-field__input" id="codepen" name="codepen" />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="codepen">
-                  CodePen username
-                </label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="simple-icons:codepen"
+              >
+                CodePen
+              </span>
+              <input
+                class="mdc-text-field__input"
+                id="codepen"
+                name="codepen"
+              />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="codepen">
+                    CodePen username
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="simple-icons:dev-dot-to"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              DEV
-            </span>
-            <input class="mdc-text-field__input" id="dev" name="dev" />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="dev">DEV username</label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="simple-icons:dev-dot-to"
+              >
+                DEV
+              </span>
+              <input class="mdc-text-field__input" id="dev" name="dev" />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="dev"
+                    >DEV username</label
+                  >
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="simple-icons:discord"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              Discord
-            </span>
-            <input class="mdc-text-field__input" id="discord" name="discord" />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="dribbble">
-                  Discord username
-                </label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="simple-icons:discord"
+              >
+                Discord
+              </span>
+              <input
+                class="mdc-text-field__input"
+                id="discord"
+                name="discord"
+              />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="dribbble">
+                    Discord username
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="simple-icons:dribbble"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              Dribbble
-            </span>
-            <input
-              class="mdc-text-field__input"
-              id="dribbble"
-              name="dribbble"
-            />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="dribbble">
-                  Dribbble username
-                </label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="simple-icons:dribbble"
+              >
+                Dribbble
+              </span>
+              <input
+                class="mdc-text-field__input"
+                id="dribbble"
+                name="dribbble"
+              />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="dribbble">
+                    Dribbble username
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="ic:outline-email"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              Email Address
-            </span>
-            <input class="mdc-text-field__input" id="email" name="email" />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="codepen">
-                  Email Address
-                </label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="ic:outline-email"
+              >
+                Email Address
+              </span>
+              <input class="mdc-text-field__input" id="email" name="email" />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="codepen">
+                    Email Address
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="simple-icons:facebook"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              Facebook
-            </span>
-            <input
-              class="mdc-text-field__input"
-              id="facebook"
-              name="facebook"
-            />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="facebook">
-                  Facebook username
-                </label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="simple-icons:facebook"
+              >
+                Facebook
+              </span>
+              <input
+                class="mdc-text-field__input"
+                id="facebook"
+                name="facebook"
+              />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="facebook">
+                    Facebook username
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="simple-icons:instagram"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              Instagram
-            </span>
-            <input
-              class="mdc-text-field__input"
-              id="instagram"
-              name="instagram"
-            />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="instagram">
-                  Instagram username
-                </label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="simple-icons:instagram"
+              >
+                Instagram
+              </span>
+              <input
+                class="mdc-text-field__input"
+                id="instagram"
+                name="instagram"
+              />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="instagram">
+                    Instagram username
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="simple-icons:keybase"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              Keybase
-            </span>
-            <input class="mdc-text-field__input" id="keybase" name="keybase" />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="keybase">
-                  Keybase username
-                </label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="simple-icons:keybase"
+              >
+                Keybase
+              </span>
+              <input
+                class="mdc-text-field__input"
+                id="keybase"
+                name="keybase"
+              />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="keybase">
+                    Keybase username
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="simple-icons:medium"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              Medium
-            </span>
-            <input class="mdc-text-field__input" id="medium" name="medium" />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="medium">
-                  Medium username
-                </label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="simple-icons:medium"
+              >
+                Medium
+              </span>
+              <input class="mdc-text-field__input" id="medium" name="medium" />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="medium">
+                    Medium username
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="simple-icons:paypal"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              PayPal
-            </span>
-            <input class="mdc-text-field__input" id="paypal" name="paypal" />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="paypal">
-                  PayPal username
-                </label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="simple-icons:paypal"
+              >
+                PayPal
+              </span>
+              <input class="mdc-text-field__input" id="paypal" name="paypal" />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="paypal">
+                    PayPal username
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="simple-icons:pinterest"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              Pinterest
-            </span>
-            <input
-              class="mdc-text-field__input"
-              id="pinterest"
-              name="pinterest"
-            />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="pinterest">
-                  Pinterest username
-                </label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="simple-icons:pinterest"
+              >
+                Pinterest
+              </span>
+              <input
+                class="mdc-text-field__input"
+                id="pinterest"
+                name="pinterest"
+              />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="pinterest">
+                    Pinterest username
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="simple-icons:reddit"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              Reddit
-            </span>
-            <input class="mdc-text-field__input" id="reddit" name="reddit" />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="reddit">
-                  Reddit username
-                </label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="simple-icons:reddit"
+              >
+                Reddit
+              </span>
+              <input class="mdc-text-field__input" id="reddit" name="reddit" />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="reddit">
+                    Reddit username
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="simple-icons:snapchat"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              Snapchat
-            </span>
-            <input
-              class="mdc-text-field__input"
-              id="snapchat"
-              name="snapchat"
-            />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="snapchat">
-                  Snapchat username
-                </label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="simple-icons:snapchat"
+              >
+                Snapchat
+              </span>
+              <input
+                class="mdc-text-field__input"
+                id="snapchat"
+                name="snapchat"
+              />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="snapchat">
+                    Snapchat username
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="simple-icons:stackexchange"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              Stack Exchange
-            </span>
-            <input
-              class="mdc-text-field__input"
-              id="stackexchange"
-              name="stackexchange"
-            />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="stackexchange">
-                  Stack Exchange user id
-                </label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="simple-icons:stackexchange"
+              >
+                Stack Exchange
+              </span>
+              <input
+                class="mdc-text-field__input"
+                id="stackexchange"
+                name="stackexchange"
+              />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="stackexchange">
+                    Stack Exchange user id
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="simple-icons:steam"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              Steam
-            </span>
-            <input class="mdc-text-field__input" id="steam" name="steam" />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="steam">
-                  Steam username
-                </label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="simple-icons:steam"
+              >
+                Steam
+              </span>
+              <input class="mdc-text-field__input" id="steam" name="steam" />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="steam">
+                    Steam username
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="mdi:telegram"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              Telegram
-            </span>
-            <input
-              class="mdc-text-field__input"
-              id="telegram"
-              name="telegram"
-            />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="telegram">
-                  Telegram username
-                </label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="mdi:telegram"
+              >
+                Telegram
+              </span>
+              <input
+                class="mdc-text-field__input"
+                id="telegram"
+                name="telegram"
+              />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="telegram">
+                    Telegram username
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="simple-icons:tvtime"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              TV Time
-            </span>
-            <input class="mdc-text-field__input" id="tvtime" name="tvtime" />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="tvtime">
-                  TV Time user id
-                </label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="simple-icons:tvtime"
+              >
+                TV Time
+              </span>
+              <input class="mdc-text-field__input" id="tvtime" name="tvtime" />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="tvtime">
+                    TV Time user id
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify social_icon mdc-text-field__icon"
-              data-icon="simple-icons:tumblr"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              Tumblr
-            </span>
-            <input class="mdc-text-field__input" id="tumblr" name="tumblr" />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="tumblr">
-                  Tumblr username
-                </label>
+              <span
+                class="iconify text_field-icon mdc-text-field__icon"
+                data-icon="simple-icons:tumblr"
+              >
+                Tumblr
+              </span>
+              <input class="mdc-text-field__input" id="tumblr" name="tumblr" />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="tumblr">
+                    Tumblr username
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify social_icon mdc-text-field__icon"
-              data-icon="simple-icons:twitch"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              Twitch
-            </span>
-            <input class="mdc-text-field__input" id="twitch" name="twitch" />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="twitch">
-                  Twitch username
-                </label>
+              <span
+                class="iconify text_field-icon mdc-text-field__icon"
+                data-icon="simple-icons:twitch"
+              >
+                Twitch
+              </span>
+              <input class="mdc-text-field__input" id="twitch" name="twitch" />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="twitch">
+                    Twitch username
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify social_icon mdc-text-field__icon"
-              data-icon="simple-icons:twitter"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              Twitter
-            </span>
-            <input class="mdc-text-field__input" id="twitter" name="twitter" />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="twitter">
-                  Twitter username
-                </label>
+              <span
+                class="iconify text_field-icon mdc-text-field__icon"
+                data-icon="simple-icons:twitter"
+              >
+                Twitter
+              </span>
+              <input
+                class="mdc-text-field__input"
+                id="twitter"
+                name="twitter"
+              />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="twitter">
+                    Twitter username
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="simple-icons:xdadevelopers"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              XDA Developers
-            </span>
-            <input
-              class="mdc-text-field__input"
-              id="xdadevelopers"
-              name="xdadevelopers"
-            />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="xdadevelopers">
-                  XDA Developers user id
-                </label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="simple-icons:xdadevelopers"
+              >
+                XDA Developers
+              </span>
+              <input
+                class="mdc-text-field__input"
+                id="xdadevelopers"
+                name="xdadevelopers"
+              />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="xdadevelopers">
+                    XDA Developers user id
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
-          </div>
-          <div
-            class="
-              mdc-text-field
-              mdc-text-field--outlined
-              mdc-text-field--with-leading-icon
-              socials
-            "
-          >
-            <span
-              class="iconify mdc-text-field__icon social_icon"
-              data-icon="simple-icons:youtube"
+            <div
+              class="
+                     mdc-text-field
+                     mdc-text-field--outlined
+                     mdc-text-field--with-leading-icon
+                     mdc-layout-grid__cell
+                     "
             >
-              YouTube
-            </span>
-            <input class="mdc-text-field__input" id="youtube" name="youtube" />
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label" for="youtube">
-                  YouTube channel id
-                </label>
+              <span
+                class="iconify mdc-text-field__icon text_field-icon"
+                data-icon="simple-icons:youtube"
+              >
+                YouTube
+              </span>
+              <input
+                class="mdc-text-field__input"
+                id="youtube"
+                name="youtube"
+              />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label class="mdc-floating-label" for="youtube">
+                    YouTube channel id
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
-              <div class="mdc-notched-outline__trailing"></div>
             </div>
           </div>
         </div>
@@ -982,23 +1029,6 @@
     const textFields = document.querySelectorAll(".mdc-text-field");
     for (const textField of textFields) {
       mdc.textField.MDCTextField.attachTo(textField);
-    }
-
-    function validate() {
-      var userName = document.getElementById("username").value;
-      if (userName == "") {
-        snackbar.open();
-        document
-          .getElementById("build-button")
-          .addEventListener("click", function (event) {
-            event.preventDefault();
-          });
-      } else {
-        snackbar.close();
-        document.getElementById("build-button").outerHTML =
-          document.getElementById("build-button").innerHTML;
-        document.getElementById("build").click();
-      }
     }
   </script>
 </html>

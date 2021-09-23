@@ -11,12 +11,18 @@ body {
 
 form {
   padding: 2vh 5vw;
-  width: 95vw;
+  width: 90vw;
 }
 
 .text_field {
   height: 16vh;
   width: 88vw;
+}
+
+.text_field-icon {
+  font-size: 32px;
+  padding-left: 12px;
+  padding-right: 4px;
 }
 
 .input {
@@ -53,9 +59,10 @@ form {
   background: var(--gradient);
   background-size: 300% 300%;
   font-family: "Manrope", sans-serif;
-  font-size: 64px;
-  height: 112px;
-  width: 224px;
+  font-weight: 700;
+  font-size: 54px;
+  height: 108px;
+  width: 192px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -74,16 +81,6 @@ form {
   }
 }
 
-.socials {
-  margin: 16px;
-}
-
-.social_icon {
-  font-size: 32px;
-  padding-left: 12px;
-  padding-right: 4px;
-}
-
 .options_switch {
   padding-top: 4vh;
 }
@@ -95,9 +92,9 @@ form {
 }
 
 .fab_icon {
-  height: 28px !important;
+  height: 18px !important;
   padding-right: 4px;
-  width: 28px !important;
+  width: 18px !important;
 }
 
 :root {
