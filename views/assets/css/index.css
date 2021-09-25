@@ -97,6 +97,19 @@ form {
   width: 18px !important;
 }
 
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--mdc-theme-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mdc-theme-on-surface);
+}
+
 :root {
   --gradient: linear-gradient(90deg, #d50000, #a0f, #2962ff);
   --mdc-theme-background: #fff;

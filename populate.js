@@ -89,16 +89,14 @@ module.exports.updateHTML = (username, opts) => {
             }</a></div>
             <div class="about_section" style="display:${
               repos[i].description == undefined ? " none" : "block"
-            };">
+            }">
                 <span>${convertToEmoji(repos[i].description)}</span>
             </div>
             <div class="mdc-card__actions">
             <div class="mdc-card__action-buttons">
                 <button class="mdc-button mdc-card__action mdc-card__action--button" style="display:${
                   repos[i].language == null ? " none" : "inline-block"
-                };"><a href="${repos[i].html_url}/search?l=${
-              repos[i].language
-            }">
+                }"><a href="${repos[i].html_url}/search?l=${repos[i].language}">
                         <div class="mdc-button__ripple"></div>
                         <span class="mdc-button__label"><span class="iconify mdc-button__icon" data-icon="mdi:code-tags"></span>${
                           repos[i].language
@@ -170,20 +168,20 @@ module.exports.updateHTML = (username, opts) => {
           document.getElementById(
             "username"
           ).innerHTML = `<span style="display:${
-            user.name == null || !user.name ? "none" : "block"
-          };">${user.name}</span>`;
+            user.name == null || !user.name ? " none" : "block"
+          }">${user.name}</span>`;
 
           document.getElementById("userbio").innerHTML = convertToEmoji(
             user.bio
           );
           document.getElementById("userbio").style.display =
-            user.bio == null || !user.bio ? "none" : "block";
+            user.bio == null || !user.bio ? " none" : "block";
 
           // Social Media links and other info about the user
           document.getElementById("about").innerHTML = `
         <span style="display:${
           user.company == null || !user.company ? " none" : "block"
-        };"><span class="iconify" data-icon="mdi:office-building"></span> &nbsp; ${
+        }"><span class="iconify" data-icon="mdi:office-building"></span> &nbsp; ${
             user.company
           }</span>
         <span style="display:block;"><a href="${
@@ -192,82 +190,82 @@ module.exports.updateHTML = (username, opts) => {
             user.login
           }</a></span>
         <span style="display:${
-          email == null ? " none !important" : "block"
-        };"><a href="mailto:${email}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="mdi:email-outline"></span>&nbsp;&nbsp;${email}</a></span>
+          email == null ? " none" : "block"
+        }"><a href="mailto:${email}" target="_blank" class="socials" rel="noopener"><span class="iconify" data-icon="mdi:email-outline"></span>&nbsp;&nbsp;${email}</a></span>
         <span style="display:${
           user.location == null || !user.location ? " none" : "block"
-        };"><a href="https://www.google.com/maps/search/?api=1&query=${
+        }"><a href="https://www.google.com/maps/search/?api=1&query=${
             user.location
           }"><span class="iconify" data-icon="mdi:map-marker-outline"></span>&nbsp;&nbsp;${
             user.location
           }</a></span>
         <span style="display:${
           user.hireable == false || !user.hireable ? " none" : "block"
-        };"><span class="iconify" data-icon="mdi:account-tie-outline"></span>&nbsp;&nbsp;Available for hire</span>
+        }"><span class="iconify" data-icon="mdi:account-tie-outline"></span>&nbsp;&nbsp;Available for hire</span>
         <div class="socials">
             <span style="display:${
-              codepen == null ? " none !important" : "block"
-            };"><a aria-label="codepen" class="socials" href="https://codepen.io/${codepen}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:codepen"></span></a></span>
+              codepen == null ? " none" : "block"
+            }"><a aria-label="codepen" class="socials" href="https://codepen.io/${codepen}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:codepen"></span></a></span>
             <span style="display:${
-              dev == null ? " none !important" : "block"
-            };"><a aria-label="dev" class="socials" href="https://dev.to/${dev}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:devdotto"></span></a></span>
+              dev == null ? " none" : "block"
+            }"><a aria-label="dev" class="socials" href="https://dev.to/${dev}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:devdotto"></span></a></span>
             <span style="display:${
-              discord == null ? " none !important" : "block"
-            };"><a class="socials" onclick="openSnackbar()" rel="noopener" style="cursor: pointer" target="_blank"><span class="iconify" data-icon="simple-icons:discord"></span></a></span>
+              discord == null ? " none" : "block"
+            }"><a class="socials" onclick="openSnackbar()" rel="noopener" style="cursor: pointer" target="_blank"><span class="iconify" data-icon="simple-icons:discord"></span></a></span>
             <span style="display:${
-              dribbble == null ? " none !important" : "block"
-            };"><a aria-label="dribbble" class="socials" href="https://www.dribbble.com/${dribbble}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:dribbble"></span></a></span>
+              dribbble == null ? " none" : "block"
+            }"><a aria-label="dribbble" class="socials" href="https://www.dribbble.com/${dribbble}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:dribbble"></span></a></span>
             <span style="display:${
-              facebook == null ? " none !important" : "block"
-            };"><a aria-label="facebook" class="socials" href="https://fb.me/${facebook}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:facebook"></span></a></span>
+              facebook == null ? " none" : "block"
+            }"><a aria-label="facebook" class="socials" href="https://fb.me/${facebook}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:facebook"></span></a></span>
             <span style="display:${
-              instagram == null ? " none !important" : "block"
-            };"><a aria-label="instagram" class="socials" href="https://www.instagram.com/${instagram}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:instagram"></span></a></span>
+              instagram == null ? " none" : "block"
+            }"><a aria-label="instagram" class="socials" href="https://www.instagram.com/${instagram}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:instagram"></span></a></span>
             <span style="display:${
-              keybase == null ? " none !important" : "block"
-            };"><a aria-label="keybase" class="socials" href="https://keybase.io/${keybase}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:keybase"></span></a></span>
+              keybase == null ? " none" : "block"
+            }"><a aria-label="keybase" class="socials" href="https://keybase.io/${keybase}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:keybase"></span></a></span>
             <span style="display:${
-              medium == null ? " none !important" : "block"
-            };"><a aria-label="medium" class="socials" href="https://medium.com/@${medium}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:medium"></span></a></span>
+              medium == null ? " none" : "block"
+            }"><a aria-label="medium" class="socials" href="https://medium.com/@${medium}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:medium"></span></a></span>
             <span style="display:${
-              paypal == null ? " none !important" : "block"
-            };"><a aria-label="paypal" class="socials" href="https://paypal.me/${paypal}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:paypal"></span></a></span>
+              paypal == null ? " none" : "block"
+            }"><a aria-label="paypal" class="socials" href="https://paypal.me/${paypal}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:paypal"></span></a></span>
             <span style="display:${
-              pinterest == null ? " none !important" : "block"
-            };"><a aria-label="pinterest" class="socials" href="https://pinterest.com/${pinterest}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:pinterest"></span></a></span>
+              pinterest == null ? " none" : "block"
+            }"><a aria-label="pinterest" class="socials" href="https://pinterest.com/${pinterest}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:pinterest"></span></a></span>
             <span style="display:${
-              reddit == null ? " none !important" : "block"
-            };"><a aria-label="reddit" class="socials" href="https://www.reddit.com/u/${reddit}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:reddit"></span></a></span>
+              reddit == null ? " none" : "block"
+            }"><a aria-label="reddit" class="socials" href="https://www.reddit.com/u/${reddit}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:reddit"></span></a></span>
             <span style="display:${
-              snapchat == null ? " none !important" : "block"
-            };"><a aria-label="snapchat" class="socials" href="https://www.snapchat.com/add/${snapchat}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:snapchat"></span></a></span>
+              snapchat == null ? " none" : "block"
+            }"><a aria-label="snapchat" class="socials" href="https://www.snapchat.com/add/${snapchat}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:snapchat"></span></a></span>
             <span style="display:${
-              stackexchange == null ? " none !important" : "block"
-            };"><a aria-label="stackexchange" class="socials" href="https://stackexchange.com/users/${stackexchange}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:stackexchange"></span></a></span>
+              stackexchange == null ? " none" : "block"
+            }"><a aria-label="stackexchange" class="socials" href="https://stackexchange.com/users/${stackexchange}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:stackexchange"></span></a></span>
             <span style="display:${
-              steam == null ? " none !important" : "block"
-            };"><a aria-label="steam" class="socials" href="https://steamcommunity.com/id/${steam}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:steam"></span></a></span>
+              steam == null ? " none" : "block"
+            }"><a aria-label="steam" class="socials" href="https://steamcommunity.com/id/${steam}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:steam"></span></a></span>
             <span style="display:${
-              telegram == null ? " none !important" : "block"
-            };"><a aria-label="telegram" class="socials" href="https://t.me/${telegram}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:telegram"></span></a></span>
+              telegram == null ? " none" : "block"
+            }"><a aria-label="telegram" class="socials" href="https://t.me/${telegram}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:telegram"></span></a></span>
             <span style="display:${
-              tvtime == null ? " none !important" : "block"
-            };"><a aria-label="tvtime" class="socials" href="https://tvtime.com/r/${tvtime}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:tvtime"></span></a></span>
+              tvtime == null ? " none" : "block"
+            }"><a aria-label="tvtime" class="socials" href="https://tvtime.com/r/${tvtime}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:tvtime"></span></a></span>
             <span style="display:${
-              tumblr == null ? " none !important" : "block"
-            };"><a aria-label="tumblr" class="socials" href="https://${tumblr}.tumblr.com/" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:tumblr"></span></a></span>
+              tumblr == null ? " none" : "block"
+            }"><a aria-label="tumblr" class="socials" href="https://${tumblr}.tumblr.com/" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:tumblr"></span></a></span>
             <span style="display:${
-              twitch == null ? " none !important" : "block"
-            };"><a aria-label="twitch" class="socials" href="https://www.twitch.tv/${twitch}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:twitch"></span></a></span>
+              twitch == null ? " none" : "block"
+            }"><a aria-label="twitch" class="socials" href="https://www.twitch.tv/${twitch}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:twitch"></span></a></span>
             <span style="display:${
-              twitter == null ? " none !important" : "block"
-            };"><a aria-label="twitter" class="socials" href="https://www.twitter.com/${twitter}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:twitter"></span></a></span>
+              twitter == null ? " none" : "block"
+            }"><a aria-label="twitter" class="socials" href="https://www.twitter.com/${twitter}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:twitter"></span></a></span>
             <span style="display:${
-              xda == null ? " none !important" : "block"
-            };"><a aria-label="xda" class="socials" href="https://forum.xda-developers.com/member.php?u=${xda}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:xdadevelopers"></span></a></span>
+              xda == null ? " none" : "block"
+            }"><a aria-label="xda" class="socials" href="https://forum.xda-developers.com/member.php?u=${xda}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:xdadevelopers"></span></a></span>
             <span style="display:${
-              youtube == null ? " none !important" : "block"
-            };"><a aria-label="youtube" class="socials" href="https://www.youtube.com/channel/${youtube}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:youtube"></span></a></span>
+              youtube == null ? " none" : "block"
+            }"><a aria-label="youtube" class="socials" href="https://www.youtube.com/channel/${youtube}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:youtube"></span></a></span>
         </div>
         </div>
         `;
@@ -318,6 +316,16 @@ module.exports.updateHTML = (username, opts) => {
               console.log("Config file updated.");
             }
           );
+
+          document
+            .querySelectorAll(
+              "button[style='display: none'], div[style='display: none'], span[style='display: none']"
+            )
+            .forEach(function (cleanup) {
+              cleanup.parentElement.removeChild(cleanup);
+            });
+          console.log(`Cleaning up HTML...`);
+
           await fs.writeFile(
             `${outDir}/index.html`,
             "<!DOCTYPE html>" + window.document.documentElement.outerHTML,
