@@ -3,3 +3,4 @@ node_modules/
 
 # Built website files
 dist/
+.sync.ffs_db

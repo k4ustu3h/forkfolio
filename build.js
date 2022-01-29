@@ -89,6 +89,7 @@ async function buildCommand(username, program) {
     initials: program.initials,
     instagram: program.instagram,
     keybase: program.keybase,
+    linkedin: program.linkedin,
     medium: program.medium,
     paypal: program.paypal,
     pinterest: program.pinterest,

@@ -24,7 +24,7 @@ Check out this [live demo](https://k4ustu3h.cf) to see forkfolio in action.
 
 Install forkfolio
 
-```sh
+```bash
 ➜  ~ git clone https://github.com/k4ustu3h/forkfolio.git
 ➜  ~ cd forkfolio
 ➜  ~ npm install -g
@@ -34,7 +34,7 @@ Install forkfolio
 
 Using the UI
 
-```sh
+```bash
 ➜  ~ forkfolio ui
 ```
 
@@ -42,7 +42,7 @@ Using the UI
 
 or
 
-```sh
+```bash
 ➜  ~ forkfolio build <username>
 ```
 
@@ -50,7 +50,7 @@ or
 
 To run your website use `run` command, Default port is 3000
 
-```sh
+```bash
 ➜  ~ forkfolio run -p [port]
 ```
 
@@ -64,7 +64,7 @@ To run your website use `run` command, Default port is 3000
 
 To include forks on your personal website just provide `-f` or `--fork` argument while building
 
-```sh
+```bash
 ➜  ~ forkfolio build <username> -f
 ```
 
@@ -72,7 +72,7 @@ To include forks on your personal website just provide `-f` or `--fork` argument
 
 To sort repos provide `--sort [sortBy]` argument while building. Where `[sortBy]` can be `star`, `created`, `updated`, `pushed`,`full_name`. Default: `created`
 
-```sh
+```bash
 ➜  ~ forkfolio build <username> --sort star
 ```
 
@@ -80,7 +80,7 @@ To sort repos provide `--sort [sortBy]` argument while building. Where `[sortBy]
 
 To order the sorted repos provide `--order [orderBy]` argument while building. Where `[orderBy]` can be `asc` or `desc`. Default: `asc`
 
-```sh
+```bash
 ➜  ~ forkfolio build <username> --sort star --order desc
 ```
 
@@ -95,7 +95,7 @@ Themes are specified using the `--theme [theme-name]` flag when running the `bui
 
 For example, the following command will build the website with the dark theme
 
-```sh
+```bash
 ➜  ~ forkfolio build <username> --theme dark
 ```
 
@@ -103,7 +103,7 @@ For example, the following command will build the website with the dark theme
 
 To customize the background image just provide `--background [url]` argument while building.
 
-```sh
+```bash
 ➜  ~ forkfolio build <username> --background https://images.unsplash.com/photo-1557277770-baf0ca74f908?w=1634
 ```
 
@@ -115,13 +115,13 @@ You can either use your GitHub profile picture or you can add your initials in a
 
 > Note that the limit of the characters you can enter in your initials is 3. If the characters exceed the limit only the first 3 will be shown.
 
-```sh
+```bash
 ➜  ~ forkfolio build <username> --initials K_
 ```
 
 You can also customize the gradient that your initials by specifying your preferred colors in (xdeg,#color1,#color2,...) format using `-g` or `--gradient` argument.
 
-```sh
+```bash
 ➜  ~ forkfolio build <username> --gradient 90deg,#2962ff,#aa00ff,#d50000
 ```
 
@@ -152,7 +152,7 @@ forkfolio supports adding the following Social links
 -   XDA Developers `-x, --xda <user id>`
 -   YouTube `-y, --youtube <channel id>`
 
-```sh
+```bash
 ➜  ~ forkfolio build <username> --discord k4ustu3h#5045 --reddit kaustubhladiya --twitter k4ustu3h
 ```
 
@@ -170,7 +170,7 @@ Go To `username.github.io` your site should be up!!
 
 To update your info, simply run
 
-```sh
+```bash
 ➜  ~ forkfolio update
 ```
 

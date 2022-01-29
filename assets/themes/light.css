@@ -2,8 +2,8 @@
   --background-background: #fff;
   --background-image: linear-gradient(
       90deg,
-      rgba(10, 10, 10, 0.4),
-      rgb(10, 10, 10, 0.4)
+      rgb(10 10 10 / 40%),
+      rgb(10 10 10 / 40%)
     ),
     url("{{{background}}}");
   --gradient: linear-gradient(90deg, #2962ff, #a0f, #d50000);

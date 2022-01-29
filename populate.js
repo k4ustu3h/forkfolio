@@ -43,6 +43,7 @@ module.exports.updateHTML = (username, opts) => {
     initials,
     instagram,
     keybase,
+    linkedin,
     medium,
     paypal,
     pinterest,
@@ -224,6 +225,9 @@ module.exports.updateHTML = (username, opts) => {
             <span style="display:${
               keybase == null ? " none" : "block"
             }"><a aria-label="keybase" class="socials" href="https://keybase.io/${keybase}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:keybase"></span></a></span>
+            <span style="display:${
+              linkedin == null ? " none" : "block"
+            }"><a aria-label="linkedin" class="socials" href="https://www.linkedin.com/in/${linkedin}/" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:linkedin"></span></a></span>
             <span style="display:${
               medium == null ? " none" : "block"
             }"><a aria-label="medium" class="socials" href="https://medium.com/@${medium}" rel="noopener" target="_blank"><span class="iconify" data-icon="simple-icons:medium"></span></a></span>

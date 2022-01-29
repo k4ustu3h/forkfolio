@@ -61,6 +61,7 @@ function uiCommand() {
     const initials = req.body.initials ? req.body.initials : null;
     const instagram = req.body.instagram ? req.body.instagram : null;
     const keybase = req.body.keybase ? req.body.keybase : null;
+    const linkedin = req.body.linkedin ? req.body.linkedin : null;
     const medium = req.body.medium ? req.body.medium : null;
     const paypal = req.body.paypal ? req.body.paypal : null;
     const pinterest = req.body.pinterest ? req.body.pinterest : null;
@@ -96,6 +97,7 @@ function uiCommand() {
       initials,
       instagram,
       keybase,
+      linkedin,
       medium,
       paypal,
       pinterest,

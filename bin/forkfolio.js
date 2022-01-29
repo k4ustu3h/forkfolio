@@ -40,6 +40,7 @@ program
   .option("-i, --initials [initials]", "specify your initials")
   .option("-I, --instagram [username]", "specify instagram username")
   .option("-k, --keybase [username]", "specify keybase username")
+  .option("-l, --linkedin [username]", "specify linkedin username")
   .option("-m, --medium [username]", "specify medium username")
   .option("-P, --paypal [username]", "specify paypal username")
   .option("-n, --pinterest [username]", "specify pinterest username")
