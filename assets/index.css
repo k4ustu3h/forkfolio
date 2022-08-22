@@ -52,6 +52,7 @@ a {
 #initials {
   animation: grad 8s ease infinite;
   background: var(--gradient);
+  background-clip: text;
   background-size: 300% 300%;
   font-family: "Asap Condensed", sans-serif;
   font-size: 128px;
@@ -242,6 +243,7 @@ a {
   #initials {
     animation: grad 8s ease infinite;
     background: var(--gradient);
+    background-clip: text;
     background-size: 300% 300%;
     font-family: "Asap Condensed", sans-serif;
     font-size: 128px;
@@ -305,7 +307,7 @@ a {
   background: var(--mdc-theme-on-primary);
 }
 
-.iconify {
+iconify-icon {
   font-size: 22px;
   line-height: 14px;
 }
