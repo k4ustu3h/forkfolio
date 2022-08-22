@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const fs = require("fs");
 const emoji = require("github-emoji");
 const jsdom = require("jsdom").JSDOM,
@@ -274,25 +275,42 @@ module.exports.updateHTML = (username, opts) => {
         </div>
         `;
 
-          document.getElementById("snackbar").innerHTML = `<div id="snackbar">
-            <div class="mdc-snackbar">
-                <div class="mdc-snackbar__surface">
-                    <div aria-live="polite" class="mdc-snackbar__label" id="discord_username" role="username">
-                        ${discord}
-                    </div>
-                    <button class="mdc-icon-button" onclick="copyToClipboard('#discord_username')">
-                        <div class="mdc-icon-button__ripple"></div>
-                        <iconify-icon icon="ic:outline-content-copy"></iconify-icon>
-                    </button>
-                    <div class="mdc-snackbar__actions">
-                        <a href="https://discord.com/channels/@me" style="text-decoration: none"><button class="mdc-button mdc-snackbar__action" type="button">
-                                <div class="mdc-button__ripple"></div>
-                                <span class="mdc-button__label mdc-theme--primary">Open Discord</span>
-                            </button></a>
-                    </div>
-                </div>
+          document.getElementById("snackbar").innerHTML = `
+          <div id="snackbar">
+          <div class="mdc-snackbar">
+            <div class="mdc-snackbar__surface">
+              <div
+                aria-live="polite"
+                class="mdc-snackbar__label"
+                id="discord_username"
+                role="username"
+              >
+                ${discord}
+              </div>
+              <button
+                class="mdc-icon-button"
+                onclick="copyToClipboard('#discord_username')"
+              >
+                <div class="mdc-icon-button__ripple"></div>
+                <iconify-icon icon="ic:outline-content-copy"></iconify-icon>
+              </button>
+              <div class="mdc-snackbar__actions">
+                <a
+                  href="https://discord.com/channels/@me"
+                  style="text-decoration: none"
+                >
+                  <button class="mdc-button mdc-snackbar__action" type="button">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label mdc-theme--primary">
+                      Open Discord
+                    </span>
+                  </button>
+                </a>
+              </div>
             </div>
-        </div>`;
+          </div>
+        </div>        
+        `;
 
           if (gradient == null) {
             var div = document.getElementById("gradient");
@@ -330,7 +348,7 @@ module.exports.updateHTML = (username, opts) => {
             });
           console.log(`Cleaning up HTML...`);
 
-          await fs.writeFile(
+          fs.writeFile(
             `${outDir}/index.html`,
             "<!DOCTYPE html>" + window.document.documentElement.outerHTML,
             function (error) {

@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 document.querySelector("#socials").addEventListener("change", (event) => {
   if (event.target.checked) {
     document.querySelector("#input_for_socials").style.display = "block";

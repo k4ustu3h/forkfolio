@@ -44,7 +44,7 @@ async function populateCSS({
   }
 
   // Read in the theme stylesheet
-  let themeSource = await fs.readFileSync(path.join(assetDir, "themes", theme));
+  let themeSource = fs.readFileSync(path.join(assetDir, "themes", theme));
   themeSource = themeSource.toString("utf-8");
   const themeTemplate = hbs.compile(themeSource);
   const styles = themeTemplate({

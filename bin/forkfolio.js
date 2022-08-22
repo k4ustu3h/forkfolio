@@ -11,6 +11,7 @@ const { uiCommand } = require("../ui");
 const { runCommand } = require("../run");
 const { version } = require("../package.json");
 
+// eslint-disable-next-line no-unused-vars
 function collect(val, memo) {
   memo.push(val);
   return memo;
