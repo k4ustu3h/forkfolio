@@ -1,5 +1,5 @@
-const { getConfig } = require("./utils");
-const { updateHTML } = require("./populate");
+import { getConfig } from "./utils.js";
+import { updateHTML } from "./populate.js";
 
 async function updateCommand() {
   const data = await getConfig();
@@ -45,6 +45,4 @@ async function updateCommand() {
   updateHTML(username, opts);
 }
 
-module.exports = {
-  updateCommand,
-};
+export { updateCommand };

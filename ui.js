@@ -1,9 +1,15 @@
-const fs = require("fs");
-const express = require("express");
-const jsdom = require("jsdom").JSDOM;
-const { updateHTML } = require("./populate");
-const { populateCSS, populateConfig } = require("./build");
-const { updateCommand } = require("./update");
+import { existsSync } from "fs";
+import express from "express";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+import { JSDOM as jsdom } from "jsdom";
+import { updateHTML } from "./populate.js";
+import { populateCSS, populateConfig } from "./build.js";
+import { updateCommand } from "./update.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const app = express();
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/views"));
@@ -23,7 +29,7 @@ app.use(
 const port = 3000;
 
 global.DOMParser = new jsdom().window.DOMParser;
-const { outDir } = require("./utils");
+import { outDir } from "./utils.js";
 
 function uiCommand() {
   app.get("/", (req, res) => {
@@ -31,7 +37,7 @@ function uiCommand() {
   });
 
   app.get("/update", (req, res) => {
-    if (!fs.existsSync(`${outDir}/config.json`)) {
+    if (!existsSync(`${outDir}/config.json`)) {
       return res.send(
         'You need to run build command before using update<br><a href="/">Go Back</a>'
       );
@@ -130,6 +136,4 @@ function uiCommand() {
   );
 }
 
-module.exports = {
-  uiCommand,
-};
+export { uiCommand };

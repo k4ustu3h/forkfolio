@@ -1,12 +1,19 @@
 /* eslint-disable no-undef */
-const fs = require("fs");
-const emoji = require("github-emoji");
-const jsdom = require("jsdom").JSDOM,
-  options = {
-    resources: "usable",
-  };
-const { getConfig, outDir } = require("./utils");
-const { getRepos, getUser } = require("./api");
+import { writeFile } from "fs";
+import { URLS } from "github-emoji";
+import { JSDOM as jsdom } from "jsdom";
+const options = {
+  resources: "usable",
+};
+import { getConfig, outDir } from "./utils.js";
+import api from "./api.js";
+const { getRepos, getUser } = api;
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
 
 function convertToEmoji(text) {
   if (text == null) return;
@@ -18,10 +25,10 @@ function convertToEmoji(text) {
       return /\S/.test(arr);
     });
     for (i = 0; i < str.length; i++) {
-      if (emoji.URLS[str[i]] != undefined) {
+      if (URLS[str[i]] != undefined) {
         text = text.replace(
           `:${str[i]}:`,
-          `<img src="${emoji.URLS[str[i]]}" class="emoji">`
+          `<img src="${URLS[str[i]]}" class="emoji">`
         );
       }
     }
@@ -31,7 +38,7 @@ function convertToEmoji(text) {
   }
 }
 
-module.exports.updateHTML = (username, opts) => {
+export function updateHTML(username, opts) {
   const {
     includeFork,
     codepen,
@@ -330,7 +337,7 @@ module.exports.updateHTML = (username, opts) => {
           data[0].name = user.name;
           data[0].userimg = user.avatar_url;
 
-          await fs.writeFile(
+          writeFile(
             `${outDir}/config.json`,
             JSON.stringify(data, null, " "),
             function (err) {
@@ -348,7 +355,7 @@ module.exports.updateHTML = (username, opts) => {
             });
           console.log(`Cleaning up HTML...`);
 
-          fs.writeFile(
+          writeFile(
             `${outDir}/index.html`,
             "<!DOCTYPE html>" + window.document.documentElement.outerHTML,
             function (error) {
@@ -364,4 +371,4 @@ module.exports.updateHTML = (username, opts) => {
     .catch(function (error) {
       console.log(error);
     });
-};
+}

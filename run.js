@@ -1,6 +1,6 @@
-const path = require("path");
-const express = require("express");
-const outDir = path.resolve("./dist/" || process.env.OUT_DIR);
+import { resolve } from "path";
+import express from "express";
+const outDir = resolve("./dist/" || process.env.OUT_DIR);
 const app = express();
 app.use(express.static(`${outDir}`));
 
@@ -17,6 +17,4 @@ function runCommand(program) {
   );
 }
 
-module.exports = {
-  runCommand,
-};
+export { runCommand };

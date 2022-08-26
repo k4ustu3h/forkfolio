@@ -1,4 +1,4 @@
-const got = require("got");
+import got from 'got';
 
 /**
  * The defaults here are the same as the API
@@ -61,7 +61,7 @@ async function getUser(username) {
   return JSON.parse(res.body);
 }
 
-module.exports = {
+export default {
   getRepos,
   getUser,
 };

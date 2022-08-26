@@ -1,15 +1,15 @@
-// Filepath utilities
-const path = require("path");
-// Promise library
-const bluebird = require("bluebird");
-const hbs = require("handlebars");
-//  Creates promise-returning async functions from callback-passed async functions
-const fs = bluebird.promisifyAll(require("fs"));
-const { updateHTML } = require("./populate");
-const { getConfig, outDir } = require("./utils");
+import { resolve, join, dirname } from "path";
+import { fileURLToPath } from "url";
+import handlebars from "handlebars";
+import fs from "fs-extra";
+import { updateHTML } from "./populate.js";
+import { getConfig, outDir } from "./utils.js";
 
-const assetDir = path.resolve(`${__dirname}/assets/`);
-const config = path.join(outDir, "config.json");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const assetDir = resolve(`${__dirname}/assets/`);
+const config = join(outDir, "config.json");
 
 /**
  * Creates the stylesheet used by the site from a template stylesheet.
@@ -23,20 +23,20 @@ async function populateCSS({
 } = {}) {
   // Get the theme the user requests. Defaults to 'light'
   theme = `${theme}.css`;
-  const template = path.resolve(assetDir, "index.css");
-  const stylesheet = path.join(outDir, "index.css");
+  const template = resolve(assetDir, "index.css");
+  const stylesheet = join(outDir, "index.css");
 
   try {
-    await fs.accessAsync(outDir, fs.constants.F_OK);
+    await fs.access(outDir, fs.constants.F_OK);
   } catch (error) {
-    await fs.mkdirAsync(outDir);
+    await fs.mkdir(outDir);
   }
 
   // Copy over the template CSS stylesheet
-  await fs.copyFileAsync(template, stylesheet);
+  await fs.copyFile(template, stylesheet);
 
   // Get an array of every available theme
-  const themes = await fs.readdirAsync(path.join(assetDir, "themes"));
+  const themes = await fs.readdir(join(assetDir, "themes"));
 
   if (!themes.includes(theme)) {
     console.error('Error: Requested theme not found. Defaulting to "light".');
@@ -44,25 +44,25 @@ async function populateCSS({
   }
 
   // Read in the theme stylesheet
-  let themeSource = fs.readFileSync(path.join(assetDir, "themes", theme));
+  let themeSource = fs.readFileSync(join(assetDir, "themes", theme));
   themeSource = themeSource.toString("utf-8");
-  const themeTemplate = hbs.compile(themeSource);
+  const themeTemplate = handlebars.compile(themeSource);
   const styles = themeTemplate({
     background: `${background}`,
   });
   // Add the user-specified styles to the new stylesheet
-  await fs.appendFileAsync(stylesheet, styles);
+  await fs.appendFile(stylesheet, styles);
 
   // Update the config file with the user's theme choice
   const data = await getConfig();
   data[0].theme = theme;
-  await fs.writeFileAsync(config, JSON.stringify(data, null, " "));
+  await fs.writeFile(config, JSON.stringify(data, null, " "));
 }
 
 async function populateConfig(opts) {
   const data = await getConfig();
   Object.assign(data[0], opts);
-  await fs.writeFileAsync(config, JSON.stringify(data, null, " "));
+  await fs.writeFile(config, JSON.stringify(data, null, " "));
 }
 
 async function buildCommand(username, program) {
@@ -110,8 +110,4 @@ async function buildCommand(username, program) {
   updateHTML(("%s", username), opts);
 }
 
-module.exports = {
-  buildCommand,
-  populateCSS,
-  populateConfig,
-};
+export { buildCommand, populateCSS, populateConfig };

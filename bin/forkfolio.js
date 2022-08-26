@@ -1,15 +1,14 @@
 #! /usr/bin/env node
 
 /* Argument parser */
-const program = require("commander");
+import { program } from "commander";
 
 process.env.OUT_DIR = process.env.OUT_DIR || process.cwd();
 
-const { buildCommand } = require("../build");
-const { updateCommand } = require("../update");
-const { uiCommand } = require("../ui");
-const { runCommand } = require("../run");
-const { version } = require("../package.json");
+import { buildCommand } from "../build.js";
+import { updateCommand } from "../update.js";
+import { uiCommand } from "../ui.js";
+import { runCommand } from "../run.js";
 
 // eslint-disable-next-line no-unused-vars
 function collect(val, memo) {
@@ -79,10 +78,7 @@ program.on("command:*", () => {
   program.help();
 });
 
-program
-  .version(version, "-v --version")
-  .usage("<command> [options]")
-  .parse(process.argv);
+program.parse(process.argv);
 
 if (program.args.length === 0) {
   program.help();
