@@ -9,7 +9,8 @@
   "scripts": {
     "clean": "rm -rf ./dist/*",
     "cli": "OUT_DIR='./dist' node bin/forkfolio.js",
-    "prettier": "prettier --write \"./**/*.{css,ejs,html,js,json,jsx,md}\""
+    "prettier": "prettier --write \"./**/*.{css,ejs,html,js,json,jsx,md}\"",
+    "test": "./bin/forkfolio.js build k4ustu3h -f -t dark -i K_ -c k4ustu3h -d k4ustu3h -D k4ustu3h -C k4ustu3h#5045 -e k4ustu3h@gmail.com -F k4ustu3h -I k4ustu3h -k k4ustu3h -l k4ustu3h -m k4ustu3h -P k4ustu3h -n k4ustu3h -r kaustubhladiya -S k4ustu3h -E 16727002 -a k4ustu3h -T k4ustu3h -V 1B8ed -u k4ustu3h -w k4ustu3h -W k4ustu3h -x 9461231 -y UCD79rV3UKNzMCkwMLgyteEw"
   },
   "author": "Kaustubh Ladiya <k4ustu3h@gmail.com> (https://k4ustu3h.cf)",
   "bugs": {
@@ -36,14 +37,14 @@
     "ejs": "3.1.8",
     "express": "4.18.1",
     "fs-extra": "10.1.0",
-    "github-emoji": "^1.1.1",
+    "github-emoji": "1.2.0",
     "got": "12.3.1",
     "handlebars": "4.7.7",
     "jsdom": "20.0.0",
     "ncp": "^2.0.0"
   },
   "devDependencies": {
-    "eslint": "8.22.0",
+    "eslint": "8.23.0",
     "prettier": "2.7.1",
     "stylelint": "14.11.0",
     "stylelint-config-prettier": "9.0.3",

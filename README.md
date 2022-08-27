@@ -1,7 +1,6 @@
-[![Build Status](https://img.shields.io/travis/com/k4ustu3h/forkfolio?style=for-the-badge)](https://travis-ci.com/github/k4ustu3h/forkfolio)
-[![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?logo=prettier&style=for-the-badge)](https://github.com/prettier/prettier)
-[![Dependencies](https://img.shields.io/david/k4ustu3h/forkfolio?style=for-the-badge)](https://david-dm.org/k4ustu3h/forkfolio)
-[![DevDependencies](https://img.shields.io/david/dev/k4ustu3h/forkfolio?style=for-the-badge)](https://david-dm.org/k4ustu3h/forkfolio?type=dev)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/k4ustu3h/forkfolio/Node.js%20Build?logo=githubactions&logoColor=fff&style=for-the-badge)](https://github.com/k4ustu3h/forkfolio/actions/workflows/node_js_build.yml)
+![Depfu](https://img.shields.io/depfu/dependencies/github/k4ustu3h/forkfolio?logo=depfu&style=for-the-badge)
+[![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-f7b93e?logo=prettier&style=for-the-badge)](https://github.com/prettier/prettier)
 [![GitHub release](https://img.shields.io/github/release/imfunniee/gitfolio.svg?style=for-the-badge)](https://github.com/imfunniee/gitfolio/releases/latest)
 
 # A WORK IN PROGRESS GITFOLIO FORK
