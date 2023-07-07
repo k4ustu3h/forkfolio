@@ -98,6 +98,7 @@ async function buildCommand(username, program) {
     stackexchange: program.stackexchange,
     steam: program.steam,
     telegram: program.telegram,
+    threads: program.threads,
     tvtime: program.tvtime,
     tumblr: program.tumblr,
     twitch: program.twitch,

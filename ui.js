@@ -78,6 +78,7 @@ function uiCommand() {
       : null;
     const steam = req.body.steam ? req.body.steam : null;
     const telegram = req.body.telegram ? req.body.telegram : null;
+    const threads = req.body.threads ? req.body.threads : null;
     const tvtime = req.body.tvtime ? req.body.tvtime : null;
     const tumblr = req.body.tumblr ? req.body.tumblr : null;
     const twitch = req.body.twitch ? req.body.twitch : null;
@@ -112,6 +113,7 @@ function uiCommand() {
       stackexchange,
       steam,
       telegram,
+      threads,
       tvtime,
       tumblr,
       twitch,

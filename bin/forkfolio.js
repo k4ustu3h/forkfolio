@@ -49,6 +49,7 @@ program
   .option("-E, --stackexchange <user id>", "specify stackexchange user id")
   .option("-a, --steam <username>", "specify steam username")
   .option("-T, --telegram <username>", "specify telegram username")
+  .option("-H, --threads <username>", "specify threads username")
   .option("-V, --tvtime <user id>", "specify tvtime user id")
   .option("-u, --tumblr <username>", "specify tumblr username")
   .option("-w, --twitch <username>", "specify twitch username")

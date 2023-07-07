@@ -54,6 +54,7 @@ export function updateHTML(username, opts) {
     stackexchange,
     steam,
     telegram,
+    threads,
     tvtime,
     tumblr,
     twitch,
@@ -252,6 +253,9 @@ export function updateHTML(username, opts) {
             <span style="display:${
               telegram == null ? " none" : "block"
             }"><a aria-label="telegram" class="socials" href="https://t.me/${telegram}" rel="noopener" target="_blank"><iconify-icon icon="simple-icons:telegram"></iconify-icon></a></span>
+            <span style="display:${
+              threads == null ? " none" : "block"
+            }"><a aria-label="threads" class="socials" href="https://threads.net/@${threads}" rel="noopener" target="_blank"><iconify-icon icon="simple-icons:threads"></iconify-icon></a></span>
             <span style="display:${
               tvtime == null ? " none" : "block"
             }"><a aria-label="tvtime" class="socials" href="https://tvtime.com/r/${tvtime}" rel="noopener" target="_blank"><iconify-icon icon="simple-icons:tvtime"></iconify-icon></a></span>

@@ -35,6 +35,7 @@ async function updateCommand() {
     stackexchange: data[0].stackexchange,
     steam: data[0].steam,
     telegram: data[0].telegram,
+    threads: data[0].threads,
     tvtime: data[0].tvtime,
     tumblr: data[0].tumblr,
     twitch: data[0].twitch,
