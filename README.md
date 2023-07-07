@@ -1,7 +1,6 @@
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/k4ustu3h/forkfolio/Node.js%20Build?logo=githubactions&logoColor=fff&style=for-the-badge)](https://github.com/k4ustu3h/forkfolio/actions/workflows/node_js_build.yml)
-![Depfu](https://img.shields.io/depfu/dependencies/github/k4ustu3h/forkfolio?logo=depfu&style=for-the-badge)
-[![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-f7b93e?logo=prettier&style=for-the-badge)](https://github.com/prettier/prettier)
-[![GitHub release](https://img.shields.io/github/release/imfunniee/gitfolio.svg?style=for-the-badge)](https://github.com/imfunniee/gitfolio/releases/latest)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/k4ustu3h/forkfolio/node.js.yml?style=for-the-badge&logo=githubactions&logoColor=fff)](https://github.com/k4ustu3h/forkfolio/actions/workflows/node.js.yml)
+![Depfu](https://img.shields.io/depfu/dependencies/github/k4ustu3h%2Fforkfolio?style=for-the-badge&logo=npm&logoColor=fff)
+[![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4?style=for-the-badge&logo=prettier&logoColor=fff)](https://github.com/prettier/prettier)
 
 # A WORK IN PROGRESS GITFOLIO FORK
 
@@ -189,6 +188,5 @@ To Update background or theme you need to run `build` command again.
 ---
 
 [![CSS](https://img.shields.io/badge/uses-css-1572B6?logo=css3&style=for-the-badge)](https://github.com/topics/css)
-[![h9rbs.js](https://img.shields.io/badge/uses-h9rbs.js-473349?style=for-the-badge)](https://html9responsiveboilerstrapjs.com/)
 [![HTML](https://img.shields.io/badge/uses-html-E34F26?logo=html5&style=for-the-badge)](https://github.com/topics/html)
 [![JavaScript](https://img.shields.io/badge/made_with-javascript-F7DF1E?logo=javascript&style=for-the-badge)](https://github.com/topics/javascript)

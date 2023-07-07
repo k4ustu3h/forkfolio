@@ -1,4 +1,4 @@
-import got from 'got';
+import got from "got";
 
 /**
  * The defaults here are the same as the API

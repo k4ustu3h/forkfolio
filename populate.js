@@ -1,18 +1,12 @@
-/* eslint-disable no-undef */
 import { writeFile } from "fs";
 import { URLS } from "github-emoji";
-import { JSDOM as jsdom } from "jsdom";
-const options = {
-  resources: "usable",
-};
+import { JSDOM } from "jsdom";
 import { getConfig, outDir } from "./utils.js";
 import api from "./api.js";
-const { getRepos, getUser } = api;
 import path from "path";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
-
 const __dirname = path.dirname(__filename);
 
 function convertToEmoji(text) {
@@ -24,11 +18,11 @@ function convertToEmoji(text) {
     str = str.filter(function (arr) {
       return /\S/.test(arr);
     });
-    for (i = 0; i < str.length; i++) {
+    for (var i = 0; i < str.length; i++) {
       if (URLS[str[i]] != undefined) {
         text = text.replace(
           `:${str[i]}:`,
-          `<img src="${URLS[str[i]]}" class="emoji">`
+          `<img src="${URLS[str[i]]}" class="emoji">`,
         );
       }
     }
@@ -69,15 +63,14 @@ export function updateHTML(username, opts) {
   } = opts;
 
   //add data to assets/index.html
-  jsdom
-    .fromFile(`${__dirname}/assets/index.html`, options)
+  JSDOM.fromFile(`${__dirname}/assets/index.html`, { resources: "usable" })
     .then(function (dom) {
       let window = dom.window,
         document = window.document;
       (async () => {
         try {
           console.log("Building HTML/CSS...");
-          const repos = await getRepos(username, opts);
+          const repos = await api.getRepos(username, opts);
 
           for (var i = 0; i < repos.length; i++) {
             let element;
@@ -138,7 +131,7 @@ export function updateHTML(username, opts) {
         </div>`;
           }
 
-          const user = await getUser(username);
+          const user = await api.getUser(username);
           document.title = user.login;
           var icon = document.createElement("link");
           icon.setAttribute("rel", "icon");
@@ -147,67 +140,66 @@ export function updateHTML(username, opts) {
 
           document.getElementsByTagName("head")[0].appendChild(icon);
           document.getElementsByTagName("head")[0].innerHTML += `
-        <meta name="description" content="${user.bio}" />
-        <meta property="og:image" content="${user.avatar_url}" />
-        <meta property="og:type" content="profile" />
-        <meta property="og:title" content="${user.login}" />
-        <meta property="og:url" content="${user.html_url}" />
-        <meta property="og:description" content="${user.bio}" />
-        <meta property="profile:username" content="${user.login}" />
-        <meta name="twitter:image:src" content="${user.avatar_url}" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="${user.login}" />
-        <meta name="twitter:description" content="${user.bio}" />`;
+            <meta name="description" content="${user.bio}" />
+            <meta property="og:image" content="${user.avatar_url}" />
+            <meta property="og:type" content="profile" />
+            <meta property="og:title" content="${user.login}" />
+            <meta property="og:url" content="${user.html_url}" />
+            <meta property="og:description" content="${user.bio}" />
+            <meta property="profile:username" content="${user.login}" />
+            <meta name="twitter:image:src" content="${user.avatar_url}" />
+            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:title" content="${user.login}" />
+            <meta name="twitter:description" content="${user.bio}" />`;
 
           // Decides if initials or profile picture is used
           if (initials == null) {
-            document.getElementById("initials").id = `image`;
+            document.getElementById("initials").id = "image";
             document.getElementById(
-              "image"
+              "image",
             ).style.background = `url('${user.avatar_url}') center center`;
           } else {
             var initials_limited = initials;
             if (initials_limited.length > 3)
               initials_limited = initials_limited.substring(0, 3);
             document.getElementById(
-              "initials"
+              "initials",
             ).innerHTML = `<span>${initials_limited}</span>`;
           }
 
           document.getElementById(
-            "username"
+            "username",
           ).innerHTML = `<span style="display:${
             user.name == null || !user.name ? " none" : "block"
           }">${user.name}</span>`;
 
           document.getElementById("userbio").innerHTML = convertToEmoji(
-            user.bio
+            user.bio,
           );
           document.getElementById("userbio").style.display =
             user.bio == null || !user.bio ? " none" : "block";
 
           // Social Media links and other info about the user
           document.getElementById("about").innerHTML = `
-        <span style="display:${
-          user.company == null || !user.company ? " none" : "block"
-        }"><iconify-icon icon="mdi:office-building-outline"></iconify-icon> &nbsp; ${
-            user.company
-          }</span>
+            <span style="display:${
+              user.company == null || !user.company ? " none" : "block"
+            }"><iconify-icon icon="mdi:office-building-outline"></iconify-icon> &nbsp;
+ ${user.company}</span>
         <span style="display:block;"><a href="${
           user.html_url
         }"><iconify-icon icon="simple-icons:github"></iconify-icon>&nbsp;&nbsp;@${
-            user.login
-          }</a></span>
+          user.login
+        }</a></span>
         <span style="display:${
           email == null ? " none" : "block"
         }"><a href="mailto:${email}" target="_blank" class="socials" rel="noopener"><iconify-icon icon="ic:round-mail-outline"></iconify-icon>&nbsp;&nbsp;${email}</a></span>
         <span style="display:${
           user.location == null || !user.location ? " none" : "block"
         }"><a href="https://www.google.com/maps/search/?api=1&query=${
-            user.location
-          }"><iconify-icon icon="mdi:map-marker-outline"></iconify-icon>&nbsp;&nbsp;${
-            user.location
-          }</a></span>
+          user.location
+        }"><iconify-icon icon="mdi:map-marker-outline"></iconify-icon>&nbsp;&nbsp;${
+          user.location
+        }</a></span>
         <span style="display:${
           user.hireable == false || !user.hireable ? " none" : "block"
         }"><iconify-icon icon="mdi:account-tie-outline"></iconify-icon>&nbsp;&nbsp;Available for hire</span>
@@ -277,7 +269,7 @@ export function updateHTML(username, opts) {
             }"><a aria-label="xda" class="socials" href="https://forum.xda-developers.com/member.php?u=${xda}" rel="noopener" target="_blank"><iconify-icon icon="simple-icons:xdadevelopers"></iconify-icon></a></span>
             <span style="display:${
               youtube == null ? " none" : "block"
-            }"><a aria-label="youtube" class="socials" href="https://www.youtube.com/channel/${youtube}" rel="noopener" target="_blank"><iconify-icon icon="simple-icons:youtube"></iconify-icon></a></span>
+            }"><a aria-label="youtube" class="socials" href="https://www.youtube.com/@${youtube}" rel="noopener" target="_blank"><iconify-icon icon="simple-icons:youtube"></iconify-icon></a></span>
         </div>
         </div>
         `;
@@ -343,12 +335,12 @@ export function updateHTML(username, opts) {
             function (err) {
               if (err) throw err;
               console.log("Config file updated.");
-            }
+            },
           );
 
           document
             .querySelectorAll(
-              "button[style='display: none'], div[style='display: none'], span[style='display: none']"
+              "button[style='display: none'], div[style='display: none'], span[style='display: none']",
             )
             .forEach(function (cleanup) {
               cleanup.parentElement.removeChild(cleanup);
@@ -361,7 +353,7 @@ export function updateHTML(username, opts) {
             function (error) {
               if (error) throw error;
               console.log(`Build Complete, Files can be Found @ ${outDir}\n`);
-            }
+            },
           );
         } catch (error) {
           console.log(error);

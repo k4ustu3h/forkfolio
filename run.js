@@ -13,7 +13,7 @@ function runCommand(program) {
 
   app.listen(port);
   console.log(
-    `\nGitfolio running on port ${port}, Navigate to http://localhost:${port} in your browser\n`
+    `\nGitfolio running on port ${port}, Navigate to http://localhost:${port} in your browser\n`,
   );
 }
 

@@ -17,16 +17,16 @@ app.set("views", __dirname + "/views");
 app.use(
   express.json({
     limit: "50mb",
-  })
+  }),
 );
 app.use(
   express.urlencoded({
     limit: "50mb",
     extended: true,
-  })
+  }),
 );
 
-const port = 3000;
+const port = 3200;
 
 global.DOMParser = new jsdom().window.DOMParser;
 import { outDir } from "./utils.js";
@@ -39,7 +39,7 @@ function uiCommand() {
   app.get("/update", (req, res) => {
     if (!existsSync(`${outDir}/config.json`)) {
       return res.send(
-        'You need to run build command before using update<br><a href="/">Go Back</a>'
+        'You need to run build command before using update<br><a href="/">Go Back</a>',
       );
     }
 
@@ -132,7 +132,7 @@ function uiCommand() {
   console.log("\nStarting...");
   app.listen(port);
   console.log(
-    `The GUI is running on port ${port}, Navigate to http://localhost:${port} in your browser\n`
+    `The GUI is running on port ${port}, Navigate to http://localhost:${port} in your browser\n`,
   );
 }
 

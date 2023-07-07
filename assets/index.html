@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,10 +15,10 @@
     />
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
-    <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
     <script
-      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
+      integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE="
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="index.css" />
@@ -78,7 +78,7 @@
       });
 
       const buttons = document.querySelectorAll(
-        ".mdc-button, .mdc-card__primary-action, .mdc-card__action, .mdc-card__action--button"
+        ".mdc-button, .mdc-card__primary-action, .mdc-card__action, .mdc-card__action--button",
       );
       for (const button of buttons) {
         mdc.ripple.MDCRipple.attachTo(button);
@@ -91,7 +91,7 @@
       }
 
       const snackbar = new window.mdc.snackbar.MDCSnackbar(
-        document.querySelector(".mdc-snackbar")
+        document.querySelector(".mdc-snackbar"),
       );
 
       function copyToClipboard(element) {

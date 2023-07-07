@@ -6,7 +6,7 @@ async function updateCommand() {
   const { username } = data[0];
   if (username === null) {
     console.log(
-      "username not found in config.json, please run build command before using update"
+      "username not found in config.json, please run build command before using update",
     );
     return;
   }
