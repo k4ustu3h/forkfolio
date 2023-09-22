@@ -2,7 +2,7 @@ body {
   align-items: center;
   background: var(--mdc-theme-background);
   color: var(--mdc-theme-on-primary);
-  font-family: "Manrope", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-feature-settings: "calt", "liga";
   font-variant-ligatures: normal;
   font-weight: 700;
@@ -87,7 +87,7 @@ a {
 
 .display h1 {
   color: var(--mdc-theme-on-primary);
-  font-family: "Asap", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 50px;
   font-weight: bold;
 }
@@ -112,13 +112,11 @@ a {
 }
 
 #userbio {
-  font-family: "Asap", sans-serif;
   font-size: 20px;
   width: 100%;
 }
 
 #about {
-  font-family: "Asap", sans-serif;
   font-size: 18px;
 }
 
@@ -171,6 +169,7 @@ a {
 }
 
 .section_title {
+  font-family: "Manrope", sans-serif;
   font-size: 24px;
   font-weight: bold;
   padding: 16px;
@@ -182,7 +181,6 @@ a {
 }
 
 .about_section {
-  font-family: "Asap", sans-serif;
   font-size: 18px;
   font-weight: bold;
   margin: 2vh 0;
@@ -214,7 +212,7 @@ a {
 
 .footer a {
   color: var(--mdc-theme-on-primary) !important;
-  font-family: "Manrope", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-feature-settings: "calt", "liga";
   font-variant-ligatures: normal;
   font-weight: 700;

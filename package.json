@@ -39,12 +39,12 @@
     "fs-extra": "11.1.1",
     "github-emoji": "1.2.0",
     "got": "13.0.0",
-    "handlebars": "4.7.7",
+    "handlebars": "4.7.8",
     "jsdom": "22.1.0",
     "ncp": "2.0.0"
   },
   "devDependencies": {
-    "eslint": "8.44.0",
-    "prettier": "3.0.0"
+    "eslint": "8.49.0",
+    "prettier": "3.0.3"
   }
 }
