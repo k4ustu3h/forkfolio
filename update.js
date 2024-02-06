@@ -39,7 +39,7 @@ async function updateCommand() {
     tvtime: data[0].tvtime,
     tumblr: data[0].tumblr,
     twitch: data[0].twitch,
-    twitter: data[0].twitter,
+    x: data[0].x,
     xda: data[0].xda,
     youtube: data[0].youtube,
   };

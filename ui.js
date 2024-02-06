@@ -82,7 +82,7 @@ function uiCommand() {
     const tvtime = req.body.tvtime ? req.body.tvtime : null;
     const tumblr = req.body.tumblr ? req.body.tumblr : null;
     const twitch = req.body.twitch ? req.body.twitch : null;
-    const twitter = req.body.twitter ? req.body.twitter : null;
+    const x = req.body.x ? req.body.x : null;
     const xda = req.body.xda ? req.body.xda : null;
     const youtube = req.body.youtube ? req.body.youtube : null;
     let background = req.body.background
@@ -117,7 +117,7 @@ function uiCommand() {
       tvtime,
       tumblr,
       twitch,
-      twitter,
+      x,
       xda,
       youtube,
     };

@@ -102,7 +102,7 @@ async function buildCommand(username, program) {
     tvtime: program.tvtime,
     tumblr: program.tumblr,
     twitch: program.twitch,
-    twitter: program.twitter,
+    x: program.x,
     xda: program.xda,
     youtube: program.youtube,
   };

@@ -53,7 +53,7 @@ program
   .option("-V, --tvtime <user id>", "specify tvtime user id")
   .option("-u, --tumblr <username>", "specify tumblr username")
   .option("-w, --twitch <username>", "specify twitch username")
-  .option("-W, --twitter <username>", "specify twitter username")
+  .option("-X, --x <username>", "specify x username")
   .option("-x, --xda <user id>", "specify xda user id")
   .option("-y, --youtube <username>", "specify youtube username")
   .action(buildCommand);

@@ -2,8 +2,6 @@
 ![Depfu](https://img.shields.io/depfu/dependencies/github/k4ustu3h%2Fforkfolio?style=for-the-badge&logo=npm&logoColor=fff)
 [![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4?style=for-the-badge&logo=prettier&logoColor=fff)](https://github.com/prettier/prettier)
 
-# A WORK IN PROGRESS GITFOLIO FORK
-
 # forkfolio
 
 ## personal website + blog for every github user
@@ -146,12 +144,12 @@ forkfolio supports adding the following Social links
 -   TV Time `-V, --tvtime <user id>`
 -   Tumblr `-u, --tumblr <username>`
 -   Twitch `-w, --twitch <username>`
--   Twitter `-W, --twitter <username>`
+-   X `-X, --x <username>`
 -   XDA Developers `-x, --xda <user id>`
 -   YouTube `-y, --youtube <channel id>`
 
 ```bash
-➜  ~ forkfolio build <username> --discord k4ustu3h#5045 --reddit kaustubhladiya --twitter k4ustu3h
+➜  ~ forkfolio build <username> --discord k4ustu3h#5045 --reddit kaustubhladiya --x k4ustu3h
 ```
 
 ---

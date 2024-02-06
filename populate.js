@@ -58,7 +58,7 @@ export function updateHTML(username, opts) {
     tvtime,
     tumblr,
     twitch,
-    twitter,
+    x,
     xda,
     youtube,
   } = opts;
@@ -156,23 +156,20 @@ export function updateHTML(username, opts) {
           // Decides if initials or profile picture is used
           if (initials == null) {
             document.getElementById("initials").id = "image";
-            document.getElementById(
-              "image",
-            ).style.background = `url('${user.avatar_url}') center center`;
+            document.getElementById("image").style.background =
+              `url('${user.avatar_url}') center center`;
           } else {
             var initials_limited = initials;
             if (initials_limited.length > 3)
               initials_limited = initials_limited.substring(0, 3);
-            document.getElementById(
-              "initials",
-            ).innerHTML = `<span>${initials_limited}</span>`;
+            document.getElementById("initials").innerHTML =
+              `<span>${initials_limited}</span>`;
           }
 
-          document.getElementById(
-            "username",
-          ).innerHTML = `<span style="display:${
-            user.name == null || !user.name ? " none" : "block"
-          }">${user.name}</span>`;
+          document.getElementById("username").innerHTML =
+            `<span style="display:${
+              user.name == null || !user.name ? " none" : "block"
+            }">${user.name}</span>`;
 
           document.getElementById("userbio").innerHTML = convertToEmoji(
             user.bio,
@@ -266,8 +263,8 @@ export function updateHTML(username, opts) {
               twitch == null ? " none" : "block"
             }"><a aria-label="twitch" class="socials" href="https://www.twitch.tv/${twitch}" rel="noopener" target="_blank"><iconify-icon icon="simple-icons:twitch"></iconify-icon></a></span>
             <span style="display:${
-              twitter == null ? " none" : "block"
-            }"><a aria-label="twitter" class="socials" href="https://www.twitter.com/${twitter}" rel="noopener" target="_blank"><iconify-icon icon="simple-icons:twitter"></iconify-icon></a></span>
+              x == null ? " none" : "block"
+            }"><a aria-label="twitter" class="socials" href="https://www.x.com/${x}" rel="noopener" target="_blank"><iconify-icon icon="simple-icons:x"></iconify-icon></a></span>
             <span style="display:${
               xda == null ? " none" : "block"
             }"><a aria-label="xda" class="socials" href="https://forum.xda-developers.com/member.php?u=${xda}" rel="noopener" target="_blank"><iconify-icon icon="simple-icons:xdadevelopers"></iconify-icon></a></span>
