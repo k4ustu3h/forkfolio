@@ -10,7 +10,7 @@ Forkfolio will help you get started with a portfolio website where you could sho
 
 ---
 
-Check out this [live demo](https://k4ustu3h.cf) to see forkfolio in action.
+Check out this [live demo](https://k4ustu3h.github.io/forkfolio/) to see forkfolio in action.
 
 ---
 
